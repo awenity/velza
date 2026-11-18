@@ -52,7 +52,7 @@
       background: #F6F8F7;
     }
     ::-webkit-scrollbar-thumb {
-      background: #42828A;
+      background: #56989B;
       border-radius: 9999px;
     }
     /* Hide scrollbar on horizontal mobile pill scroller while keeping smooth touch swipe */
@@ -84,7 +84,7 @@
           <img 
             src="logo.webp" 
             alt="VELZA Logo" 
-            onerror="this.onerror=null;this.src='https://placehold.co/160x64/42828A/F6F8F7?text=VELZA';"
+            onerror="this.onerror=null;this.src='https://placehold.co/160x64/56989B/F6F8F7?text=VELZA';"
             class="velza-logo h-11 sm:h-13 w-auto object-contain select-none"
           />
         </a>
@@ -101,7 +101,7 @@
         <div class="flex items-center gap-2.5">
           <div id="header-status-badge" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-velza-darker/45 text-[11px] sm:text-xs font-medium text-velza-cream">
             <span id="status-dot" class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
-            <span id="status-text" class="whitespace-nowrap">Checking Hours...</span>
+            <span id="status-text" class="whitespace-nowrap">12:00 PM – 12:00 AM PKT</span>
           </div>
 
           <!-- Desktop Order Tray Button (Hidden on mobile since bottom bar handles thumb access) -->
@@ -140,12 +140,12 @@
 
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       
-      <!-- Original Borderless Hero Logo (Blends seamlessly into teal background) -->
+      <!-- Original Borderless Hero Logo (Blends seamlessly into #56989B teal background) -->
       <div class="mx-auto mb-5 sm:mb-7 flex justify-center">
         <img 
           src="logo.webp" 
           alt="VELZA Bahawalpur" 
-          onerror="this.onerror=null;this.src='https://placehold.co/320x240/42828A/F6F8F7?text=VELZA';"
+          onerror="this.onerror=null;this.src='https://placehold.co/320x240/56989B/F6F8F7?text=VELZA';"
           class="velza-logo w-48 sm:w-64 md:w-72 h-auto object-contain select-none"
         />
       </div>
@@ -257,7 +257,7 @@
           <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-md aspect-[4/5] bg-velza-light">
             <img 
               src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" 
-              onerror="this.onerror=null;this.src='https://placehold.co/600x750/42828A/F6F8F7?text=Specialty+Coffee';" 
+              onerror="this.onerror=null;this.src='https://placehold.co/600x750/56989B/F6F8F7?text=Specialty+Coffee';" 
               alt="VELZA Specialty Coffee" 
               class="w-full h-full object-cover"
             />
@@ -271,26 +271,26 @@
             <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-md aspect-square bg-velza-light">
               <img 
                 src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" 
-                onerror="this.onerror=null;this.src='https://placehold.co/600x600/2F636A/F6F8F7?text=Artisan+Pizza';" 
-                alt="VELZA Artisan Pizza" 
+                onerror="this.onerror=null;this.src='https://placehold.co/600x600/2F636A/F6F8F7?text=Gourmet+Mains';" 
+                alt="VELZA Gourmet Mains" 
                 class="w-full h-full object-cover"
               />
               <div class="absolute inset-x-0 bottom-0 p-3 sm:p-4 bg-gradient-to-t from-velza-charcoal/85 via-velza-charcoal/35 to-transparent text-white">
                 <span class="text-[10px] sm:text-xs uppercase tracking-wider text-velza-goldlight font-semibold">Kitchen</span>
-                <p class="font-semibold text-xs sm:text-base">Stone-Baked Pizzas</p>
+                <p class="font-semibold text-xs sm:text-base">Steaks, Burgers & Pastas</p>
               </div>
             </div>
 
             <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-md aspect-[4/3] bg-velza-light">
               <img 
                 src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80" 
-                onerror="this.onerror=null;this.src='https://placehold.co/600x450/42828A/F6F8F7?text=Fresh+Desserts';" 
+                onerror="this.onerror=null;this.src='https://placehold.co/600x450/56989B/F6F8F7?text=Fresh+Desserts';" 
                 alt="VELZA Fresh Daily Desserts" 
                 class="w-full h-full object-cover"
               />
               <div class="absolute inset-x-0 bottom-0 p-3 sm:p-4 bg-gradient-to-t from-velza-charcoal/85 via-velza-charcoal/35 to-transparent text-white">
                 <span class="text-[10px] sm:text-xs uppercase tracking-wider text-velza-goldlight font-semibold">Patisserie</span>
-                <p class="font-semibold text-xs sm:text-base">Crafted Daily</p>
+                <p class="font-semibold text-xs sm:text-base">Waffles, Cheesecakes & Cakes</p>
               </div>
             </div>
           </div>
@@ -305,58 +305,68 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="text-center max-w-xl mx-auto mb-8 sm:mb-12">
+      <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10">
         <span class="inline-block px-3 py-1 rounded-full bg-velza-light text-velza-teal text-xs font-bold uppercase tracking-widest mb-2.5">
-          Curated Menu
+          Official VELZA Cafe Menu
         </span>
         <h2 class="font-display text-2xl sm:text-4xl font-bold text-velza-charcoal">
           Savour Every Pour & Plate
         </h2>
         <p class="text-velza-slate text-sm sm:text-base mt-2">
-          Tap items to build your takeaway or dine-in WhatsApp order tray.
+          Browse by category or search any item to build your WhatsApp order tray.
         </p>
       </div>
 
       <!-- Mobile-First Horizontal Snap-Scroll Category Pills + Search -->
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3.5 mb-7 sm:mb-10">
-        <!-- Swipeable Category Bar on Mobile -->
-        <div id="menu-tabs" class="flex items-center gap-2 overflow-x-auto no-scrollbar snap-x py-1 -mx-4 px-4 sm:mx-0 sm:px-0">
-          <button data-category="all" onclick="filterMenu('all')" class="menu-tab active snap-start shrink-0 min-h-[44px] px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-velza-teal text-white shadow-sm">
-            All Items
-          </button>
-          <button data-category="coffee" onclick="filterMenu('coffee')" class="menu-tab snap-start shrink-0 min-h-[44px] px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-velza-charcoal hover:bg-velza-light">
-            ☕ Specialty Coffee
-          </button>
-          <button data-category="food" onclick="filterMenu('food')" class="menu-tab snap-start shrink-0 min-h-[44px] px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-velza-charcoal hover:bg-velza-light">
-            🍕 Premium Food
-          </button>
-          <button data-category="desserts" onclick="filterMenu('desserts')" class="menu-tab snap-start shrink-0 min-h-[44px] px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-velza-charcoal hover:bg-velza-light">
-            🍰 Fresh Desserts
-          </button>
-        </div>
-
+      <div class="space-y-3.5 mb-7 sm:mb-10">
         <!-- Touch-Friendly Search Input -->
-        <div class="relative w-full md:w-72">
+        <div class="relative max-w-md mx-auto">
           <input 
             type="text" 
             id="menu-search" 
             oninput="searchMenu(this.value)" 
-            placeholder="Search coffee, pizza, cheesecake..." 
-            class="w-full min-h-[44px] pl-10 pr-4 py-2.5 rounded-full bg-white text-sm text-velza-charcoal placeholder-velza-slate/60 shadow-xs focus:outline-none focus:ring-2 focus:ring-velza-teal"
+            placeholder="Search chillers, matcha, steaks, waffles, cakes..." 
+            class="w-full min-h-[46px] pl-11 pr-10 py-2.5 rounded-full bg-white text-sm text-velza-charcoal placeholder-velza-slate/60 shadow-xs focus:outline-none focus:ring-2 focus:ring-velza-teal"
           />
-          <svg class="w-4 h-4 text-velza-slate absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 text-velza-slate absolute left-4 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0z" />
           </svg>
+          <button id="clear-search-btn" onclick="clearSearch()" class="hidden absolute right-3.5 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-velza-light text-velza-slate text-xs font-bold items-center justify-center hover:bg-velza-teal hover:text-white" aria-label="Clear Search">✕</button>
+        </div>
+
+        <!-- Swipeable Category Filter Bar on Mobile -->
+        <div id="menu-tabs" class="flex items-center gap-2 overflow-x-auto no-scrollbar snap-x py-1.5 -mx-4 px-4 sm:mx-0 sm:px-0 lg:justify-center">
+          <button data-category="all" onclick="filterMenu('all')" class="menu-tab active snap-start shrink-0 min-h-[44px] px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-velza-teal text-white shadow-sm">
+            All Menu
+          </button>
+          <button data-category="cold-beverages" onclick="filterMenu('cold-beverages')" class="menu-tab snap-start shrink-0 min-h-[44px] px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-velza-charcoal hover:bg-velza-light">
+            🥤 Cold Beverages
+          </button>
+          <button data-category="iced-coffee-matcha" onclick="filterMenu('iced-coffee-matcha')" class="menu-tab snap-start shrink-0 min-h-[44px] px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-velza-charcoal hover:bg-velza-light">
+            🧊 Iced Coffee & Matcha
+          </button>
+          <button data-category="hot-beverages" onclick="filterMenu('hot-beverages')" class="menu-tab snap-start shrink-0 min-h-[44px] px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-velza-charcoal hover:bg-velza-light">
+            ☕ Hot Beverages & Teas
+          </button>
+          <button data-category="savory-mains" onclick="filterMenu('savory-mains')" class="menu-tab snap-start shrink-0 min-h-[44px] px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-velza-charcoal hover:bg-velza-light">
+            🍔 Savory & Mains
+          </button>
+          <button data-category="waffles-bakery" onclick="filterMenu('waffles-bakery')" class="menu-tab snap-start shrink-0 min-h-[44px] px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-velza-charcoal hover:bg-velza-light">
+            🧇 Waffles & Bakery
+          </button>
+          <button data-category="cakes-addons" onclick="filterMenu('cakes-addons')" class="menu-tab snap-start shrink-0 min-h-[44px] px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-velza-charcoal hover:bg-velza-light">
+            🎂 Cakes & Add-Ons
+          </button>
         </div>
       </div>
 
-      <!-- Menu Cards Grid (1-col mobile -> 2-col tablet -> 3-col desktop) -->
-      <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        <!-- Populated dynamically via JS -->
+      <!-- Categorized Menu Container -->
+      <div id="menu-sections-container" class="space-y-10 sm:space-y-12">
+        <!-- Populated dynamically via JS with exact sub-category headers & items -->
       </div>
 
       <!-- Quick Tray Banner -->
-      <div class="mt-10 p-5 sm:p-8 rounded-3xl bg-velza-deep text-velza-cream flex flex-col sm:flex-row items-center justify-between gap-5 shadow-lg">
+      <div class="mt-12 p-5 sm:p-8 rounded-3xl bg-velza-deep text-velza-cream flex flex-col sm:flex-row items-center justify-between gap-5 shadow-lg">
         <div class="text-center sm:text-left">
           <h3 class="font-display text-lg sm:text-2xl font-bold text-white">Ready to order from VELZA?</h3>
           <p class="text-xs sm:text-sm text-velza-cream/85 mt-1">Send your selected items directly to WhatsApp (<span class="font-semibold text-velza-goldlight">0312-7099198</span>).</p>
@@ -648,230 +658,334 @@
 
   <!-- ==================== INTERACTIVE APPLICATION LOGIC ==================== -->
   <script>
-    // Curated VELZA Menu Data (Prices in PKR)
+    // Complete Official VELZA Cafe Menu (Clean double-quoted strings, zero syntax hazards)
     const menuItems = [
-      // Specialty Coffee
-      {
-        id: 'velza-spanish-latte',
-        name: 'VELZA Signature Spanish Latte',
-        category: 'coffee',
-        tag: 'Bestseller',
-        price: 780,
-        description: 'Double-shot specialty espresso folded into silky textured milk and house-caramelized condensed cream. Served hot or iced.'
-      },
-      {
-        id: 'velvet-pistachio-cortado',
-        name: 'Roasted Pistachio Velvet Latte',
-        category: 'coffee',
-        tag: 'House Special',
-        price: 850,
-        description: 'Aromatic roasted pistachio praline blended with rich single-origin espresso and micro-foamed milk.'
-      },
-      {
-        id: 'salted-caramel-macchiato',
-        name: 'Iced Salted Caramel Macchiato',
-        category: 'coffee',
-        tag: 'Cold Brewed',
-        price: 790,
-        description: 'Chilled vanilla-kissed milk layered with bold espresso shots and a ribbon of sea-salt caramel.'
-      },
-      {
-        id: 'classic-cappuccino',
-        name: 'Artisan Cappuccino',
-        category: 'coffee',
-        tag: 'Classic',
-        price: 620,
-        description: 'Balanced 1:1:1 ratio of dark-roasted espresso, steamed milk, and dense velvety crema.'
-      },
+      // ==================== COLD BEVERAGES: CHILLERS ====================
+      { id: "peach-chiller", name: "Peach Chiller", category: "cold-beverages", subCategory: "Chillers", price: 599 },
+      { id: "mango-chiller", name: "Mango Chiller", category: "cold-beverages", subCategory: "Chillers", price: 599 },
+      { id: "strawberry-chiller", name: "Strawberry Chiller", category: "cold-beverages", subCategory: "Chillers", price: 599 },
+      { id: "blue-berry-chiller", name: "Blue Berry Chiller", category: "cold-beverages", subCategory: "Chillers", price: 599 },
+      { id: "mix-berry-chiller", name: "Mix Berry Chiller", category: "cold-beverages", subCategory: "Chillers", price: 599 },
+      { id: "mint-margarita", name: "Mint Margarita", category: "cold-beverages", subCategory: "Chillers", price: 599 },
+      { id: "lime-chiller", name: "Lime Chiller", category: "cold-beverages", subCategory: "Chillers", price: 599 },
 
-      // Premium Food
-      {
-        id: 'woodfired-chicken-alfredo-pizza',
-        name: 'Smoked Chicken & Truffle Alfredo Pizza',
-        category: 'food',
-        tag: 'Chef Signature',
-        price: 1850,
-        description: 'Hand-stretched 11-inch artisan crust topped with creamy parmesan alfredo, chargrilled chicken, mushrooms & mozzarella.'
-      },
-      {
-        id: 'velza-peri-flatbread',
-        name: 'VELZA Fiery Peri-Peri Flatbread',
-        category: 'food',
-        tag: 'Spicy',
-        price: 1690,
-        description: 'Crisp stone-baked flatbread loaded with herb-marinated chicken, roasted peppers, jalapeños, and smoky garlic drizzle.'
-      },
-      {
-        id: 'creamy-pesto-fettuccine',
-        name: 'Chargrilled Chicken Pesto Fettuccine',
-        category: 'food',
-        tag: 'Popular',
-        price: 1550,
-        description: 'Al dente fettuccine tossed in fresh basil-pine nut cream sauce, aged parmesan, and seared herb chicken.'
-      },
-      {
-        id: 'crispy-brioche-sliders',
-        name: 'Gourmet Truffle Melt Sliders (3 Pcs)',
-        category: 'food',
-        tag: 'Sharing',
-        price: 1390,
-        description: 'Toasted butter brioche buns stacked with juicy smash patties, aged cheddar, caramelized onions, and house sauce.'
-      },
+      // ==================== COLD BEVERAGES: SMOOTHIES ====================
+      { id: "peach-smoothie", name: "Peach Smoothie", category: "cold-beverages", subCategory: "Smoothies", price: 699 },
+      { id: "mango-smoothie", name: "Mango Smoothie", category: "cold-beverages", subCategory: "Smoothies", price: 699 },
+      { id: "strawberry-smoothie", name: "Strawberry Smoothie", category: "cold-beverages", subCategory: "Smoothies", price: 699 },
+      { id: "blue-berry-smoothie", name: "Blue Berry Smoothie", category: "cold-beverages", subCategory: "Smoothies", price: 699 },
+      { id: "mix-berry-smoothie", name: "Mix Berry Smoothie", category: "cold-beverages", subCategory: "Smoothies", price: 699 },
+      { id: "pina-colada", name: "Pina Colada", category: "cold-beverages", subCategory: "Smoothies", price: 699 },
 
-      // Fresh Desserts Crafted Daily
-      {
-        id: 'san-sebastian-cheesecake',
-        name: 'Burnt Basque San Sebastian Cheesecake',
-        category: 'desserts',
-        tag: 'Crafted Daily',
-        price: 920,
-        description: 'Caramelized golden crust with an ultra-creamy molten center, served with warm Belgian milk chocolate pour-over.'
-      },
-      {
-        id: 'classic-espresso-tiramisu',
-        name: 'VELZA Espresso Tiramisu Cup',
-        category: 'desserts',
-        tag: 'Must Try',
-        price: 880,
-        description: 'Espresso-soaked savoiardi layered with airy mascarpone cream and a dusting of Dutch-processed cocoa.'
-      },
-      {
-        id: 'lotus-biscoff-tres-leches',
-        name: 'Lotus Biscoff Tres Leches',
-        category: 'desserts',
-        tag: 'Fresh Batch',
-        price: 850,
-        description: 'Three-milk soaked vanilla sponge crowned with whipped mascarpone and spiced caramelized Biscoff spread.'
-      },
-      {
-        id: 'warm-fudge-skillet',
-        name: 'Warm Belgian Chocolate Fudge Brownie',
-        category: 'desserts',
-        tag: 'Served Warm',
-        price: 760,
-        description: 'Crackly-top dark chocolate brownie baked fresh daily, paired with a scoop of Madagascar vanilla bean gelato.'
-      }
+      // ==================== COLD BEVERAGES: SHAKES ====================
+      { id: "strawberry-banana-shake", name: "Strawberry Banana", category: "cold-beverages", subCategory: "Shakes", price: 799 },
+      { id: "fudge-shake", name: "Fudge Shake", category: "cold-beverages", subCategory: "Shakes", price: 799 },
+      { id: "nautila-shake", name: "Nautila Shake", category: "cold-beverages", subCategory: "Shakes", price: 799 },
+      { id: "cookies-and-creame", name: "Cookies and Creame", category: "cold-beverages", subCategory: "Shakes", price: 799 },
+      { id: "lotus-shake", name: "Lotus Shake", category: "cold-beverages", subCategory: "Shakes", price: 799 },
+      { id: "vanila-caramel-shake", name: "Vanila Caramel", category: "cold-beverages", subCategory: "Shakes", price: 799 },
+      { id: "peanut-butter-with-jam", name: "Peanut Butter With Jam", category: "cold-beverages", subCategory: "Shakes", price: 799 },
+      { id: "velza-special-shake", name: "Velza Special Shake", category: "cold-beverages", subCategory: "Shakes", price: 799 },
+
+      // ==================== COLD BEVERAGES: REFRESHERS ====================
+      { id: "peach-breeze", name: "Peach Breeze", category: "cold-beverages", subCategory: "Refreshers", price: 499 },
+      { id: "strawberry-rush", name: "Strawberry Rush", category: "cold-beverages", subCategory: "Refreshers", price: 499 },
+      { id: "blue-zisty", name: "Blue Zisty", category: "cold-beverages", subCategory: "Refreshers", price: 499 },
+      { id: "pomegranate-refresher", name: "Pomegranate", category: "cold-beverages", subCategory: "Refreshers", price: 499 },
+      { id: "green-apple-refresher", name: "Green Apple", category: "cold-beverages", subCategory: "Refreshers", price: 499 },
+      { id: "blue-berry-refresher", name: "Blue Berry", category: "cold-beverages", subCategory: "Refreshers", price: 499 },
+
+      // ==================== ICED COFFEE & MATCHA: OVER ICE COFFEE ====================
+      { id: "iced-latte", name: "Iced Latte", category: "iced-coffee-matcha", subCategory: "Over Ice Coffee", price: 699 },
+      { id: "iced-americano", name: "Iced Americano", category: "iced-coffee-matcha", subCategory: "Over Ice Coffee", price: 699 },
+      { id: "iced-spanish", name: "Iced Spanish", category: "iced-coffee-matcha", subCategory: "Over Ice Coffee", price: 699 },
+      { id: "iced-vanila", name: "Iced Vanila", category: "iced-coffee-matcha", subCategory: "Over Ice Coffee", price: 699 },
+      { id: "iced-caramel", name: "Iced Caramel", category: "iced-coffee-matcha", subCategory: "Over Ice Coffee", price: 699 },
+      { id: "iced-hazalnut", name: "Iced Hazalnut", category: "iced-coffee-matcha", subCategory: "Over Ice Coffee", price: 699 },
+      { id: "iced-irish", name: "Iced Irish", category: "iced-coffee-matcha", subCategory: "Over Ice Coffee", price: 699 },
+
+      // ==================== ICED COFFEE & MATCHA: MATCHA ====================
+      { id: "matcha", name: "Matcha", category: "iced-coffee-matcha", subCategory: "Matcha", price: 699 },
+      { id: "coconut-matcha", name: "Coconut Matcha", category: "iced-coffee-matcha", subCategory: "Matcha", price: 699 },
+      { id: "strawberry-matcha", name: "Strawberry Matcha", category: "iced-coffee-matcha", subCategory: "Matcha", price: 699 },
+      { id: "vanila-matcha", name: "Vanila Matcha", category: "iced-coffee-matcha", subCategory: "Matcha", price: 699 },
+
+      // ==================== ICED COFFEE & MATCHA: ICE TEA ====================
+      { id: "peach-tea", name: "Peach Tea", category: "iced-coffee-matcha", subCategory: "Ice Tea", price: 499 },
+      { id: "green-apple-tea", name: "Green Apple Tea", category: "iced-coffee-matcha", subCategory: "Ice Tea", price: 499 },
+      { id: "lemon-tea", name: "Lemon Tea", category: "iced-coffee-matcha", subCategory: "Ice Tea", price: 499 },
+
+      // ==================== ICED COFFEE & MATCHA: FRAPPES ====================
+      { id: "very-vanila-frappe", name: "Very vanila", category: "iced-coffee-matcha", subCategory: "Frappes", price: 699 },
+      { id: "caramel-frappe", name: "Caramel", category: "iced-coffee-matcha", subCategory: "Frappes", price: 699 },
+      { id: "mochacino-frappe", name: "Mochacino", category: "iced-coffee-matcha", subCategory: "Frappes", price: 699 },
+
+      // ==================== HOT BEVERAGES & TEAS: HOT BEVERAGES ====================
+      { id: "cappuccino", name: "Cappuccino", category: "hot-beverages", subCategory: "Hot Beverages", price: 599 },
+      { id: "cafe-latte", name: "Café Latte", category: "hot-beverages", subCategory: "Hot Beverages", price: 599 },
+      { id: "americano", name: "Americano", category: "hot-beverages", subCategory: "Hot Beverages", price: 499 },
+      { id: "vanilla-latte", name: "Vanilla Latte", category: "hot-beverages", subCategory: "Hot Beverages", price: 699 },
+      { id: "caramel-latte", name: "Caramel Latte", category: "hot-beverages", subCategory: "Hot Beverages", price: 699 },
+      { id: "hazelnut-latte", name: "Hazelnut Latte", category: "hot-beverages", subCategory: "Hot Beverages", price: 699 },
+      { id: "irish-latte", name: "Irish Latte", category: "hot-beverages", subCategory: "Hot Beverages", price: 699 },
+      { id: "spanish-latte", name: "Spanish Latte", category: "hot-beverages", subCategory: "Hot Beverages", price: 699 },
+      { id: "cafe-mocha", name: "Café Mocha", category: "hot-beverages", subCategory: "Hot Beverages", price: 699 },
+      { id: "hot-chocolate", name: "Hot Chocolate", category: "hot-beverages", subCategory: "Hot Beverages", price: 699 },
+      { id: "espresso-sd", name: "Espresso Sd", category: "hot-beverages", subCategory: "Hot Beverages", price: 699 },
+      { id: "salted-caramel-hot", name: "Salted Caramel", category: "hot-beverages", subCategory: "Hot Beverages", price: 699 },
+      { id: "butter-mint-latte", name: "Butter Mint Latte", category: "hot-beverages", subCategory: "Hot Beverages", price: 699 },
+      { id: "toffee-latte", name: "Toffee Latte", category: "hot-beverages", subCategory: "Hot Beverages", price: 699 },
+
+      // ==================== HOT BEVERAGES & TEAS: HOT TEAS ====================
+      { id: "english-breakfast-tea", name: "English Breakfast", category: "hot-beverages", subCategory: "Hot Teas", price: 299 },
+      { id: "chamomile-tea", name: "Chamomile", category: "hot-beverages", subCategory: "Hot Teas", price: 299 },
+      { id: "lemon-hot-tea", name: "Lemon", category: "hot-beverages", subCategory: "Hot Teas", price: 299 },
+
+      // ==================== SAVORY & MAINS: APPETIZERS ====================
+      { id: "strips-4-pcs", name: "Strips 4 Pcs", category: "savory-mains", subCategory: "Appetizers", price: 399 },
+      { id: "fries", name: "Fries", category: "savory-mains", subCategory: "Appetizers", price: 399 },
+      { id: "loaded-fries", name: "Loaded Fries", category: "savory-mains", subCategory: "Appetizers", price: 499 },
+      { id: "baked-wings-6-pcs", name: "Baked Wings 6 Pcs", category: "savory-mains", subCategory: "Appetizers", price: 399 },
+      { id: "fish-and-chips", name: "Fish & Chips", category: "savory-mains", subCategory: "Appetizers", price: 999 },
+
+      // ==================== SAVORY & MAINS: BURGERS ====================
+      { id: "crunch-max", name: "Crunch Max", category: "savory-mains", subCategory: "Burgers", price: 599 },
+      { id: "beef-smash", name: "Beef Smash", category: "savory-mains", subCategory: "Burgers", price: 999 },
+
+      // ==================== SAVORY & MAINS: SANDWICH ====================
+      { id: "grilled-b-sandwich", name: "Grilled B", category: "savory-mains", subCategory: "Sandwich", price: 799 },
+      { id: "bbq-sandwich", name: "BBQ", category: "savory-mains", subCategory: "Sandwich", price: 799 },
+      { id: "club-sandwich", name: "Club", category: "savory-mains", subCategory: "Sandwich", price: 749 },
+
+      // ==================== SAVORY & MAINS: STEAKS ====================
+      { id: "black-pepper-steak", name: "Black Pepper", category: "savory-mains", subCategory: "Steaks", price: 1499 },
+      { id: "mushroom-steak", name: "Mushroom", category: "savory-mains", subCategory: "Steaks", price: 1499 },
+
+      // ==================== SAVORY & MAINS: WRAP ====================
+      { id: "grilled-wrap", name: "Grilled Wrap", category: "savory-mains", subCategory: "Wrap", price: 699 },
+      { id: "crunchy-bite-wrap", name: "Crunchy Bite", category: "savory-mains", subCategory: "Wrap", price: 699 },
+
+      // ==================== SAVORY & MAINS: PASTA ====================
+      { id: "alfredo-pasta", name: "Alfredo", category: "savory-mains", subCategory: "Pasta", price: 899 },
+      { id: "penne-pasta", name: "Penne", category: "savory-mains", subCategory: "Pasta", price: 899 },
+
+      // ==================== WAFFLES & BAKERY: WAFFELS ====================
+      { id: "classic-waffle", name: "Classic Waffle", category: "waffles-bakery", subCategory: "Waffels", price: 499 },
+      { id: "chocolate-waffle", name: "Chocolate Waffle", category: "waffles-bakery", subCategory: "Waffels", price: 499 },
+      { id: "lotus-waffle", name: "Lotus Waffle", category: "waffles-bakery", subCategory: "Waffels", price: 499 },
+      { id: "nutella-waffle", name: "Nutella Waffle", category: "waffles-bakery", subCategory: "Waffels", price: 499 },
+      { id: "strawberry-waffle", name: "Strawberry Waffle", category: "waffles-bakery", subCategory: "Waffels", price: 499 },
+      { id: "oreo-waffle", name: "Oreo Waffle", category: "waffles-bakery", subCategory: "Waffels", price: 499 },
+      { id: "belgian-waffle-ice-cream", name: "Belgian Waffle with Ice Cream", category: "waffles-bakery", subCategory: "Waffels", price: 499 },
+      { id: "premium-loaded-waffle", name: "Premium Loaded Waffle", category: "waffles-bakery", subCategory: "Waffels", price: 499 },
+
+      // ==================== WAFFLES & BAKERY: COOKIES ====================
+      { id: "chocolate-chunk-cookie", name: "Chocolate Chunk Cookie", category: "waffles-bakery", subCategory: "Cookies", price: 499 },
+      { id: "lotus-stuffed-cookie", name: "Lotus Stuffed Cookie", category: "waffles-bakery", subCategory: "Cookies", price: 499 },
+      { id: "nutella-stuffed-cookie", name: "Nutella Stuffed Cookie", category: "waffles-bakery", subCategory: "Cookies", price: 499 },
+      { id: "marshmallow-cookie", name: "Marshmallow Cookie", category: "waffles-bakery", subCategory: "Cookies", price: 499 },
+      { id: "peanut-butter-cookie", name: "Peanut Butter Cookie", category: "waffles-bakery", subCategory: "Cookies", price: 499 },
+
+      // ==================== WAFFLES & BAKERY: BROWNIE ====================
+      { id: "nutella-brownie", name: "Nutella Brownie", category: "waffles-bakery", subCategory: "Brownie", price: 599 },
+      { id: "lotus-brownie", name: "Lotus Brownie", category: "waffles-bakery", subCategory: "Brownie", price: 599 },
+      { id: "fudge-brownie", name: "Fudge Brownie", category: "waffles-bakery", subCategory: "Brownie", price: 599 },
+
+      // ==================== WAFFLES & BAKERY: CAKE SLICES ====================
+      { id: "ny-cheesecake-slice", name: "New York Cheesecake Slice", category: "waffles-bakery", subCategory: "Cake Slices", price: 699 },
+      { id: "lotus-cheesecake-slice", name: "Lotus Cheesecake Slice", category: "waffles-bakery", subCategory: "Cake Slices", price: 699 },
+      { id: "chocolate-fudge-cake-slice", name: "Chocolate Fudge Cake Slice", category: "waffles-bakery", subCategory: "Cake Slices", price: 699 },
+
+      // ==================== WAFFLES & BAKERY: DONUTS ====================
+      { id: "chocolate-glazed-donut", name: "Chocolate Glazed", category: "waffles-bakery", subCategory: "Donuts", price: 399 },
+      { id: "lotus-donut", name: "Lotus", category: "waffles-bakery", subCategory: "Donuts", price: 399 },
+      { id: "nutella-donut", name: "Nutella", category: "waffles-bakery", subCategory: "Donuts", price: 399 },
+
+      // ==================== CAKES & ADD-ONS: CAKES ====================
+      { id: "fudge-cake", name: "Fudge Cake", category: "cakes-addons", subCategory: "Cakes", price: 2800 },
+      { id: "belgian-malt-cake", name: "Belgian Malt", category: "cakes-addons", subCategory: "Cakes", price: 3000 },
+      { id: "kit-kat-cake", name: "Kit Kat Cake", category: "cakes-addons", subCategory: "Cakes", price: 2800 },
+      { id: "lotus-cake", name: "Lotus Cake", category: "cakes-addons", subCategory: "Cakes", price: 3200 },
+      { id: "tiramisu-cake", name: "Tiramisu Cake", category: "cakes-addons", subCategory: "Cakes", price: 2500 },
+      { id: "three-milk-cake", name: "Three Milk cake", category: "cakes-addons", subCategory: "Cakes", price: 2600 },
+
+      // ==================== CAKES & ADD-ONS: SP CAKES ====================
+      { id: "molten-lava-cake", name: "Molten Lava Cake", category: "cakes-addons", subCategory: "SP Cakes", price: 699 },
+      { id: "brownie-with-ice-cream", name: "Brownie With Ice Cream", category: "cakes-addons", subCategory: "SP Cakes", price: 699 },
+      { id: "matilda-cake", name: "Matilda Cake", category: "cakes-addons", subCategory: "SP Cakes", price: 399 },
+
+      // ==================== CAKES & ADD-ONS: ADD ON & OTHER DIPS ====================
+      { id: "whip-cream", name: "Whip Cream", category: "cakes-addons", subCategory: "Add On", price: 150 },
+      { id: "ice-cream-addon", name: "Ice Cream", category: "cakes-addons", subCategory: "Add On", price: 150 },
+      { id: "signature-dips", name: "Dips", category: "cakes-addons", subCategory: "Other Dips", price: 120 },
+      { id: "water-bottle", name: "Water", category: "cakes-addons", subCategory: "Other Dips", price: 60 }
     ];
 
-    let activeCategory = 'all';
-    let searchQuery = '';
+    let activeCategory = "all";
+    let searchQuery = "";
     let cart = [];
 
-    // Initialize Page on Load
-    document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('current-year').textContent = new Date().getFullYear();
+    // Safe Initialization (runs immediately if DOM is already ready or on DOMContentLoaded)
+    function initVelzaApp() {
+      const yearEl = document.getElementById("current-year");
+      if (yearEl) {
+        yearEl.textContent = String(new Date().getFullYear());
+      }
       setDefaultReservationDate();
       updateCafeOpenStatus();
       setInterval(updateCafeOpenStatus, 60000);
       renderMenu();
       renderCart();
-    });
+    }
 
-    // Calculate PKT (UTC+5) Open/Closed Status (12:00 PM to 12:00 AM)
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initVelzaApp);
+    } else {
+      initVelzaApp();
+    }
+
+    // Reliable UTC+5 PKT Open/Closed Status (12:00 PM to 12:00 AM) using pure arithmetic
     function updateCafeOpenStatus() {
-      try {
-        const now = new Date();
-        const pktTimeString = now.toLocaleString('en-US', { timeZone: 'Asia/Karachi', hour12: false, hour: '2-digit', minute: '2-digit' });
-        const [hourStr] = pktTimeString.split(':');
-        const pktHour = parseInt(hourStr, 10);
+      const statusDot = document.getElementById("status-dot");
+      const statusText = document.getElementById("status-text");
+      if (!statusDot || !statusText) return;
 
-        // Open from 12:00 (noon) until 23:59 (midnight)
-        const isOpen = pktHour >= 12 && pktHour < 24;
+      const pktDate = new Date(Date.now() + 5 * 3600 * 1000);
+      const pktHour = pktDate.getUTCHours();
+      const isOpen = pktHour >= 12 && pktHour < 24;
 
-        const statusDot = document.getElementById('status-dot');
-        const statusText = document.getElementById('status-text');
-
-        if (isOpen) {
-          statusDot.className = 'w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0';
-          statusText.textContent = 'Open • Till 12 AM';
-        } else {
-          statusDot.className = 'w-2 h-2 rounded-full bg-amber-400 shrink-0';
-          statusText.textContent = 'Opens 12:00 PM';
-        }
-      } catch (e) {
-        document.getElementById('status-text').textContent = '12 PM – 12 AM';
+      if (isOpen) {
+        statusDot.className = "w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0";
+        statusText.textContent = "Open Now • Till 12 AM";
+      } else {
+        statusDot.className = "w-2 h-2 rounded-full bg-amber-400 shrink-0";
+        statusText.textContent = "Opens 12:00 PM PKT";
       }
     }
 
     // Set Reservation Date Input Default to Today
     function setDefaultReservationDate() {
-      const dateInput = document.getElementById('res-date');
+      const dateInput = document.getElementById("res-date");
       if (dateInput) {
-        const today = new Date().toISOString().split('T')[0];
+        const today = new Date().toISOString().split("T")[0];
         dateInput.min = today;
         dateInput.value = today;
       }
     }
 
-    // Render Menu Grid
+    // Render Categorized Menu Sections & Mobile-First Item Rows
     function renderMenu() {
-      const grid = document.getElementById('menu-grid');
+      const container = document.getElementById("menu-sections-container");
+      if (!container) return;
+
+      const q = searchQuery.toLowerCase();
       const filtered = menuItems.filter(item => {
-        const matchesCat = activeCategory === 'all' || item.category === activeCategory;
-        const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                              item.description.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchesCat = activeCategory === "all" || item.category === activeCategory;
+        const matchesSearch =
+          item.name.toLowerCase().includes(q) ||
+          item.subCategory.toLowerCase().includes(q);
         return matchesCat && matchesSearch;
       });
 
       if (filtered.length === 0) {
-        grid.innerHTML = `
-          <div class="col-span-full text-center py-12 bg-white rounded-3xl border border-velza-teal/15">
-            <p class="font-display text-lg font-bold text-velza-charcoal">No matching items found</p>
-            <p class="text-sm text-velza-slate mt-1">Try clearing your search or switching menu categories.</p>
+        container.innerHTML = `
+          <div class="text-center py-12 px-4 bg-white rounded-3xl shadow-xs">
+            <p class="font-display text-lg font-bold text-velza-charcoal">No matching menu items found</p>
+            <p class="text-sm text-velza-slate mt-1">Try clearing your search or switching category tabs.</p>
           </div>
         `;
         return;
       }
 
-      grid.innerHTML = filtered.map(item => {
-        const inCart = cart.find(c => c.id === item.id);
-        const qty = inCart ? inCart.qty : 0;
+      // Group filtered items sequentially by subCategory
+      const groups = [];
+      const groupMap = {};
+      filtered.forEach(item => {
+        if (!groupMap[item.subCategory]) {
+          groupMap[item.subCategory] = {
+            subCategory: item.subCategory,
+            items: []
+          };
+          groups.push(groupMap[item.subCategory]);
+        }
+        groupMap[item.subCategory].items.push(item);
+      });
 
+      container.innerHTML = groups.map(group => {
+        const showSignatureDipsBanner = group.subCategory === "Pasta";
         return `
-          <article class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2.5">
-                <span class="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-velza-light text-velza-teal">
-                  ${item.tag}
-                </span>
-                <span class="font-bold text-base text-velza-charcoal">
-                  Rs. ${item.price.toLocaleString()}
-                </span>
-              </div>
-              <h3 class="font-display text-base sm:text-lg font-bold text-velza-charcoal leading-snug mb-1.5">
-                ${item.name}
+          <section class="space-y-4">
+            <!-- Sub-Category Header -->
+            <div class="flex items-center gap-3">
+              <h3 class="font-display text-lg sm:text-2xl font-bold text-velza-darker tracking-wide uppercase shrink-0">
+                ${group.subCategory}
               </h3>
-              <p class="text-xs sm:text-sm text-velza-slate leading-relaxed">
-                ${item.description}
-              </p>
+              <div class="h-px flex-1 bg-velza-teal/25"></div>
+              <span class="text-xs font-semibold text-velza-slate shrink-0">${group.items.length} items</span>
             </div>
 
-            <div class="pt-4 mt-4 border-t border-velza-cream flex items-center justify-between">
-              ${qty === 0 ? `
-                <button onclick="addToCart('${item.id}')" class="w-full min-h-[44px] py-2.5 px-4 rounded-xl bg-velza-cream hover:bg-velza-teal text-velza-charcoal hover:text-white font-semibold text-xs sm:text-sm transition-colors flex items-center justify-center gap-2 active:scale-[0.98]">
-                  <span>+ Add to Order Tray</span>
-                </button>
-              ` : `
-                <div class="w-full flex items-center justify-between bg-velza-light rounded-xl p-1">
-                  <button onclick="updateQty('${item.id}', -1)" class="w-10 h-10 rounded-lg bg-white text-velza-charcoal font-bold shadow-xs hover:bg-velza-cream transition-colors">−</button>
-                  <span class="text-xs sm:text-sm font-bold text-velza-teal">${qty} in Tray</span>
-                  <button onclick="updateQty('${item.id}', 1)" class="w-10 h-10 rounded-lg bg-velza-teal text-white font-bold shadow-xs hover:bg-velza-deep transition-colors">+</button>
-                </div>
-              `}
+            <!-- Items Grid (1-col mobile, 2-col tablet, 3-col desktop) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+              ${group.items.map(item => {
+                const inCart = cart.find(c => c.id === item.id);
+                const qty = inCart ? inCart.qty : 0;
+
+                return `
+                  <article class="bg-white rounded-2xl p-4 sm:p-5 shadow-xs hover:shadow-md transition-all flex items-center justify-between gap-3">
+                    <div class="min-w-0">
+                      <span class="inline-block text-[10px] font-bold uppercase tracking-wider text-velza-teal mb-0.5">
+                        ${item.subCategory}
+                      </span>
+                      <h4 class="font-semibold text-sm sm:text-base text-velza-charcoal leading-snug">
+                        ${item.name}
+                      </h4>
+                      <p class="font-bold text-sm sm:text-base text-velza-deep mt-1">
+                        Rs. ${item.price.toLocaleString()}
+                      </p>
+                    </div>
+
+                    <div class="shrink-0">
+                      ${qty === 0 ? `
+                        <button onclick="addToCart('${item.id}')" class="min-h-[44px] px-4 py-2 rounded-xl bg-velza-light hover:bg-velza-teal text-velza-darker hover:text-white font-bold text-xs sm:text-sm transition-colors active:scale-95">
+                          + Add
+                        </button>
+                      ` : `
+                        <div class="flex items-center gap-1.5 bg-velza-light rounded-xl p-1">
+                          <button onclick="updateQty('${item.id}', -1)" class="w-9 h-9 rounded-lg bg-white text-velza-charcoal font-bold shadow-xs hover:bg-velza-cream transition-colors" aria-label="Decrease quantity">−</button>
+                          <span class="w-6 text-center text-xs sm:text-sm font-bold text-velza-darker">${qty}</span>
+                          <button onclick="updateQty('${item.id}', 1)" class="w-9 h-9 rounded-lg bg-velza-teal text-white font-bold shadow-xs hover:bg-velza-deep transition-colors" aria-label="Increase quantity">+</button>
+                        </div>
+                      `}
+                    </div>
+                  </article>
+                `;
+              }).join("")}
             </div>
-          </article>
+
+            ${showSignatureDipsBanner ? `
+              <div class="mt-4 p-4 rounded-2xl bg-velza-light/90 border border-velza-teal/20 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+                <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                  <span class="px-2.5 py-1 rounded-full bg-velza-darker text-velza-goldlight text-[10px] font-bold uppercase tracking-widest">Signature Dips</span>
+                  <span class="font-display font-bold text-xs sm:text-sm text-velza-charcoal tracking-wide">DYNAMITE &nbsp;|&nbsp; HONEY MUSTARD</span>
+                </div>
+                <button onclick="addToCart('signature-dips')" class="text-xs font-bold text-velza-teal hover:text-velza-deep underline">
+                  + Add Dips (Rs. 120)
+                </button>
+              </div>
+            ` : ""}
+          </section>
         `;
-      }).join('');
+      }).join("");
     }
 
     // Filter Category Tabs
     function filterMenu(category) {
       activeCategory = category;
-      document.querySelectorAll('.menu-tab').forEach(btn => {
+      document.querySelectorAll(".menu-tab").forEach(btn => {
         if (btn.dataset.category === category) {
-          btn.className = 'menu-tab active snap-start shrink-0 min-h-[44px] px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-velza-teal text-white shadow-sm';
+          btn.className = "menu-tab active snap-start shrink-0 min-h-[44px] px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-velza-teal text-white shadow-sm";
         } else {
-          btn.className = 'menu-tab snap-start shrink-0 min-h-[44px] px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-velza-charcoal hover:bg-velza-light';
+          btn.className = "menu-tab snap-start shrink-0 min-h-[44px] px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-velza-charcoal hover:bg-velza-light";
         }
       });
       renderMenu();
@@ -880,7 +994,23 @@
     // Search Menu
     function searchMenu(val) {
       searchQuery = val.trim();
+      const clearBtn = document.getElementById("clear-search-btn");
+      if (clearBtn) {
+        if (searchQuery.length > 0) {
+          clearBtn.classList.remove("hidden");
+          clearBtn.classList.add("flex");
+        } else {
+          clearBtn.classList.add("hidden");
+          clearBtn.classList.remove("flex");
+        }
+      }
       renderMenu();
+    }
+
+    function clearSearch() {
+      const input = document.getElementById("menu-search");
+      if (input) input.value = "";
+      searchMenu("");
     }
 
     // Cart Management
@@ -912,19 +1042,21 @@
     }
 
     function renderCart() {
-      const container = document.getElementById('cart-items-container');
-      const badgeDesktop = document.getElementById('cart-badge-desktop');
-      const badgeMobile = document.getElementById('cart-badge-mobile');
-      const bannerCount = document.getElementById('banner-cart-count');
-      const totalEl = document.getElementById('cart-total');
-      const sendBtn = document.getElementById('send-wa-order-btn');
+      const container = document.getElementById("cart-items-container");
+      const badgeDesktop = document.getElementById("cart-badge-desktop");
+      const badgeMobile = document.getElementById("cart-badge-mobile");
+      const bannerCount = document.getElementById("banner-cart-count");
+      const totalEl = document.getElementById("cart-total");
+      const sendBtn = document.getElementById("send-wa-order-btn");
+
+      if (!container || !totalEl || !sendBtn) return;
 
       const totalQty = cart.reduce((sum, i) => sum + i.qty, 0);
       const totalPrice = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
 
-      if (badgeDesktop) badgeDesktop.textContent = totalQty;
-      if (badgeMobile) badgeMobile.textContent = totalQty;
-      if (bannerCount) bannerCount.textContent = totalQty;
+      if (badgeDesktop) badgeDesktop.textContent = String(totalQty);
+      if (badgeMobile) badgeMobile.textContent = String(totalQty);
+      if (bannerCount) bannerCount.textContent = String(totalQty);
       totalEl.textContent = `Rs. ${totalPrice.toLocaleString()}`;
       sendBtn.disabled = cart.length === 0;
 
@@ -933,7 +1065,7 @@
           <div class="h-full flex flex-col items-center justify-center text-center py-10">
             <div class="w-14 h-14 rounded-2xl bg-velza-light text-velza-teal flex items-center justify-center text-2xl mb-3">☕</div>
             <h4 class="font-display font-bold text-base sm:text-lg text-velza-charcoal">Your tray is empty</h4>
-            <p class="text-xs sm:text-sm text-velza-slate max-w-xs mt-1">Select specialty coffee, artisan food, or daily desserts to build a WhatsApp order.</p>
+            <p class="text-xs sm:text-sm text-velza-slate max-w-xs mt-1">Select specialty coffee, savory mains, or fresh desserts to build a WhatsApp order.</p>
           </div>
         `;
         return;
@@ -943,7 +1075,7 @@
         <div class="flex items-center justify-between gap-3 p-3.5 rounded-2xl bg-velza-cream">
           <div class="min-w-0">
             <h4 class="font-semibold text-sm text-velza-charcoal truncate">${item.name}</h4>
-            <p class="text-xs text-velza-slate mt-0.5">Rs. ${item.price.toLocaleString()} each</p>
+            <p class="text-xs text-velza-slate mt-0.5">${item.subCategory} • Rs. ${item.price.toLocaleString()} each</p>
           </div>
           <div class="flex items-center gap-1.5 shrink-0">
             <button onclick="updateQty('${item.id}', -1)" class="w-9 h-9 rounded-lg bg-white text-velza-charcoal font-bold text-sm shadow-xs">−</button>
@@ -951,14 +1083,15 @@
             <button onclick="updateQty('${item.id}', 1)" class="w-9 h-9 rounded-lg bg-velza-teal text-white font-bold text-sm">+</button>
           </div>
         </div>
-      `).join('');
+      `).join("");
     }
 
     // Send Order Tray to VELZA WhatsApp (0312-7099198)
     function sendOrderToWhatsApp() {
       if (cart.length === 0) return;
 
-      const orderType = document.getElementById('order-type').value;
+      const orderTypeEl = document.getElementById("order-type");
+      const orderType = orderTypeEl ? orderTypeEl.value : "Takeaway / Self-Pickup";
       const totalPrice = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
 
       let message = `Assalam-o-Alaikum *VELZA Bahawalpur*! ☕\n`;
@@ -972,17 +1105,17 @@
       message += `Please confirm availability and prep time. Thank you!`;
 
       const waUrl = `https://wa.me/923127099198?text=${encodeURIComponent(message)}`;
-      window.open(waUrl, '_blank', 'noopener,noreferrer');
+      window.open(waUrl, "_blank", "noopener,noreferrer");
     }
 
     // Submit Table Reservation to VELZA WhatsApp
     function submitReservation(event) {
       event.preventDefault();
-      const name = document.getElementById('res-name').value.trim();
-      const guests = document.getElementById('res-guests').value;
-      const date = document.getElementById('res-date').value;
-      const time = document.getElementById('res-time').value;
-      const notes = document.getElementById('res-notes').value.trim();
+      const name = document.getElementById("res-name").value.trim();
+      const guests = document.getElementById("res-guests").value;
+      const date = document.getElementById("res-date").value;
+      const time = document.getElementById("res-time").value;
+      const notes = document.getElementById("res-notes").value.trim();
 
       let message = `Assalam-o-Alaikum *VELZA Bahawalpur*! ✨\n`;
       message += `I would like to reserve a table:\n\n`;
@@ -996,56 +1129,60 @@
       message += `\nLooking forward to visiting Model Town B!`;
 
       const waUrl = `https://wa.me/923127099198?text=${encodeURIComponent(message)}`;
-      window.open(waUrl, '_blank', 'noopener,noreferrer');
-      showToast('Opening WhatsApp to confirm your table...');
+      window.open(waUrl, "_blank", "noopener,noreferrer");
+      showToast("Opening WhatsApp to confirm your table...");
     }
 
     // Drawer & Mobile Menu Toggles (Bottom-sheet on mobile, Side drawer on desktop)
     function toggleOrderDrawer(open) {
-      const drawer = document.getElementById('order-drawer');
-      const backdrop = document.getElementById('order-drawer-backdrop');
+      const drawer = document.getElementById("order-drawer");
+      const backdrop = document.getElementById("order-drawer-backdrop");
+      if (!drawer || !backdrop) return;
+
       if (open) {
-        backdrop.classList.remove('hidden');
-        drawer.classList.remove('translate-y-full', 'md:translate-x-full');
+        backdrop.classList.remove("hidden");
+        drawer.classList.remove("translate-y-full", "md:translate-x-full");
       } else {
-        backdrop.classList.add('hidden');
-        drawer.classList.add('translate-y-full', 'md:translate-x-full');
+        backdrop.classList.add("hidden");
+        drawer.classList.add("translate-y-full", "md:translate-x-full");
       }
     }
 
     function toggleMobileMenu() {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
+      const menu = document.getElementById("mobile-menu");
+      if (menu) menu.classList.toggle("hidden");
     }
 
     // Copy Address Helper
     function copyAddress() {
-      const address = 'Fateh Chowk, near Ghalla Mandi Gate Number 1, Model Town B, Bahawalpur, Pakistan';
-      const tempInput = document.createElement('textarea');
+      const address = "Fateh Chowk, near Ghalla Mandi Gate Number 1, Model Town B, Bahawalpur, Pakistan";
+      const tempInput = document.createElement("textarea");
       tempInput.value = address;
       document.body.appendChild(tempInput);
       tempInput.select();
-      document.execCommand('copy');
+      document.execCommand("copy");
       document.body.removeChild(tempInput);
 
-      const label = document.getElementById('copy-addr-label');
-      label.textContent = 'Copied ✓';
-      showToast('VELZA address copied to clipboard');
+      const label = document.getElementById("copy-addr-label");
+      if (label) label.textContent = "Copied ✓";
+      showToast("VELZA address copied to clipboard");
       setTimeout(() => {
-        label.textContent = 'Copy Address';
+        if (label) label.textContent = "Copy Address";
       }, 2500);
     }
 
     // Toast Helper
     let toastTimeout;
     function showToast(text) {
-      const toast = document.getElementById('toast');
-      const msg = document.getElementById('toast-message');
+      const toast = document.getElementById("toast");
+      const msg = document.getElementById("toast-message");
+      if (!toast || !msg) return;
+
       msg.textContent = text;
-      toast.classList.remove('opacity-0', 'translate-y-3');
+      toast.classList.remove("opacity-0", "translate-y-3");
       clearTimeout(toastTimeout);
       toastTimeout = setTimeout(() => {
-        toast.classList.add('opacity-0', 'translate-y-3');
+        toast.classList.add("opacity-0", "translate-y-3");
       }, 2600);
     }
   </script>
