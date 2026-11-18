@@ -21,16 +21,15 @@
         extend: {
           colors: {
             velza: {
-              teal: '#42828A',
-              deep: '#33676E',
-              darker: '#254C52',
-              light: '#5A9AA2',
-              cream: '#F4F7F6',
-              offwhite: '#EBF2F0',
+              teal: '#56989B',
+              deep: '#2F636A',
+              darker: '#21484E',
+              light: '#EBF3F4',
+              cream: '#F6F8F7',
               charcoal: '#1A2628',
               slate: '#475A5D',
-              gold: '#D4AF37',
-              goldlight: '#E6C866'
+              gold: '#C9A25B',
+              goldlight: '#DFBE7C'
             }
           },
           fontFamily: {
@@ -44,73 +43,78 @@
   </script>
 
   <style>
-    /* Subtle custom scrollbars and smooth transitions */
+    /* Clean custom scrollbars and mobile-first touch refinements */
     ::-webkit-scrollbar {
-      width: 8px;
+      width: 6px;
+      height: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: #F4F7F6;
+      background: #F6F8F7;
     }
     ::-webkit-scrollbar-thumb {
       background: #42828A;
       border-radius: 9999px;
     }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #33676E;
+    /* Hide scrollbar on horizontal mobile pill scroller while keeping smooth touch swipe */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Strictly borderless, frameless logo rendering */
+    .velza-logo {
+      border: 0 !important;
+      outline: 0 !important;
+      box-shadow: none !important;
+      background: transparent !important;
     }
   </style>
 </head>
-<body class="bg-velza-cream text-velza-charcoal font-sans antialiased selection:bg-velza-teal selection:text-white">
+<body class="bg-velza-cream text-velza-charcoal font-sans antialiased pb-20 md:pb-0 selection:bg-velza-teal selection:text-white">
 
-  <!-- ==================== STICKY HEADER & NAVIGATION ==================== -->
-  <header id="navbar" class="fixed top-0 inset-x-0 z-40 transition-all duration-300 bg-velza-deep/95 backdrop-blur-md border-b border-white/10">
+  <!-- ==================== STICKY MOBILE-FIRST HEADER ==================== -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-40 transition-all duration-300 bg-velza-teal/95 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
+      <div class="flex items-center justify-between h-16 sm:h-20">
         
-        <!-- Brand Logo (Compact Header Version) -->
-        <a href="#home" class="flex items-center gap-3 group focus:outline-none" aria-label="VELZA Home">
-          <svg class="w-11 h-11 text-velza-cream transition-transform duration-300 group-hover:scale-105" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Rising Steam Wisps -->
-            <path d="M55 37C51 29 53 21 61 14C58 21 59 27 63 33C60 35 57 36 55 37Z" fill="currentColor" opacity="0.9"/>
-            <path d="M64 35C62 29 64 23 69 19C67 24 68 28 70 32C68 33 66 34 64 35Z" fill="currentColor" opacity="0.85"/>
-            <!-- VZ Monogram -->
-            <path d="M24 44H41L53 76L63 50H70L54 91H48L29 44H24Z" fill="currentColor"/>
-            <path d="M61 44H96V49L67 86H95L91 91H57V86L86 49H61V44Z" fill="currentColor"/>
-            <rect x="56" y="64" width="14" height="3.5" fill="currentColor"/>
-          </svg>
-          <div>
-            <span class="block font-display text-xl sm:text-2xl font-bold tracking-[0.22em] text-velza-cream leading-none">VELZA</span>
-            <span class="block text-[10px] uppercase tracking-[0.25em] text-velza-goldlight mt-1">Bahawalpur</span>
-          </div>
+        <!-- Borderless Original Brand Logo -->
+        <a href="#home" class="flex items-center gap-2.5 focus:outline-none min-h-[44px]" aria-label="VELZA Home">
+          <img 
+            src="logo.webp" 
+            alt="VELZA Logo" 
+            onerror="this.onerror=null;this.src='https://placehold.co/160x64/42828A/F6F8F7?text=VELZA';"
+            class="velza-logo h-11 sm:h-13 w-auto object-contain select-none"
+          />
         </a>
 
         <!-- Desktop Navigation Links -->
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-velza-cream/90">
-          <a href="#about" class="hover:text-velza-goldlight transition-colors">Our Craft</a>
-          <a href="#menu" class="hover:text-velza-goldlight transition-colors">Menu & Order</a>
-          <a href="#reserve" class="hover:text-velza-goldlight transition-colors">Book a Table</a>
-          <a href="#visit" class="hover:text-velza-goldlight transition-colors">Location & Hours</a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-velza-cream/95">
+          <a href="#about" class="hover:text-velza-goldlight transition-colors py-2">Our Craft</a>
+          <a href="#menu" class="hover:text-velza-goldlight transition-colors py-2">Menu & Order</a>
+          <a href="#reserve" class="hover:text-velza-goldlight transition-colors py-2">Book a Table</a>
+          <a href="#visit" class="hover:text-velza-goldlight transition-colors py-2">Location & Hours</a>
         </nav>
 
-        <!-- Header Right Actions: Live Status + Order Tray Trigger -->
-        <div class="flex items-center gap-3">
-          <!-- Dynamic PKT Open/Closed Pill -->
-          <div id="header-status-badge" class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-medium text-velza-cream">
-            <span id="status-dot" class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span id="status-text">Checking Hours...</span>
+        <!-- Header Right: Live PKT Status Pill + Desktop Order Tray Button -->
+        <div class="flex items-center gap-2.5">
+          <div id="header-status-badge" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-velza-darker/45 text-[11px] sm:text-xs font-medium text-velza-cream">
+            <span id="status-dot" class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+            <span id="status-text" class="whitespace-nowrap">Checking Hours...</span>
           </div>
 
-          <!-- Order Tray Button -->
-          <button onclick="toggleOrderDrawer(true)" class="relative inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-velza-gold text-velza-charcoal font-semibold text-xs sm:text-sm shadow-lg hover:bg-velza-goldlight transition-all active:scale-95">
+          <!-- Desktop Order Tray Button (Hidden on mobile since bottom bar handles thumb access) -->
+          <button onclick="toggleOrderDrawer(true)" class="hidden md:inline-flex items-center gap-2 min-h-[44px] px-4 py-2 rounded-full bg-velza-gold text-velza-charcoal font-bold text-sm hover:bg-velza-goldlight transition-all active:scale-95">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
             </svg>
             <span>Tray</span>
-            <span id="cart-badge" class="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 text-xs font-bold rounded-full bg-velza-charcoal text-white">0</span>
+            <span id="cart-badge-desktop" class="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 text-xs font-bold rounded-full bg-velza-charcoal text-white">0</span>
           </button>
 
-          <!-- Mobile Menu Toggle -->
-          <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-xl text-velza-cream hover:bg-white/10 transition-colors" aria-label="Toggle Menu">
+          <!-- Mobile Navigation Drawer Button -->
+          <button onclick="toggleMobileMenu()" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl text-velza-cream hover:bg-white/10 active:bg-white/15 transition-colors" aria-label="Toggle Menu">
             <svg id="mobile-menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -120,111 +124,86 @@
     </div>
 
     <!-- Mobile Dropdown Navigation -->
-    <div id="mobile-menu" class="hidden md:hidden bg-velza-darker border-t border-white/10 px-4 pt-3 pb-5 space-y-2">
-      <div id="mobile-status-row" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/5 text-xs text-velza-cream mb-2">
-        <span id="mobile-status-dot" class="w-2 h-2 rounded-full bg-emerald-400"></span>
-        <span id="mobile-status-text">12:00 PM – 12:00 AM Daily</span>
-      </div>
-      <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl text-velza-cream hover:bg-white/10 font-medium">Our Craft</a>
-      <a href="#menu" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl text-velza-cream hover:bg-white/10 font-medium">Menu & WhatsApp Order</a>
-      <a href="#reserve" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl text-velza-cream hover:bg-white/10 font-medium">Book a Table</a>
-      <a href="#visit" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl text-velza-cream hover:bg-white/10 font-medium">Location & Hours</a>
+    <div id="mobile-menu" class="hidden md:hidden bg-velza-deep px-4 pt-2 pb-5 space-y-1.5 shadow-xl">
+      <a href="#about" onclick="toggleMobileMenu()" class="flex items-center min-h-[44px] px-3.5 rounded-xl text-velza-cream hover:bg-white/10 font-medium text-sm">Our Craft</a>
+      <a href="#menu" onclick="toggleMobileMenu()" class="flex items-center min-h-[44px] px-3.5 rounded-xl text-velza-cream hover:bg-white/10 font-medium text-sm">Menu & WhatsApp Order</a>
+      <a href="#reserve" onclick="toggleMobileMenu()" class="flex items-center min-h-[44px] px-3.5 rounded-xl text-velza-cream hover:bg-white/10 font-medium text-sm">Book a Table</a>
+      <a href="#visit" onclick="toggleMobileMenu()" class="flex items-center min-h-[44px] px-3.5 rounded-xl text-velza-cream hover:bg-white/10 font-medium text-sm">Location & Hours</a>
     </div>
   </header>
 
-  <!-- ==================== HERO SECTION ==================== -->
-  <section id="home" class="relative pt-28 pb-20 sm:pt-36 sm:pb-28 bg-gradient-to-b from-velza-teal via-velza-teal to-velza-deep text-velza-cream overflow-hidden">
-    <!-- Decorative Radial Glows -->
-    <div class="pointer-events-none absolute -top-24 -right-24 w-96 h-96 rounded-full bg-white/10 blur-3xl"></div>
-    <div class="pointer-events-none absolute -bottom-32 -left-24 w-[28rem] h-[28rem] rounded-full bg-velza-darker/50 blur-3xl"></div>
+  <!-- ==================== HERO SECTION (MOBILE-FIRST) ==================== -->
+  <section id="home" class="relative pt-24 pb-14 sm:pt-32 sm:pb-24 bg-gradient-to-b from-velza-teal via-velza-teal to-velza-deep text-velza-cream overflow-hidden">
+    <!-- Ambient Background Glow -->
+    <div class="pointer-events-none absolute -top-20 -right-20 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-white/10 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-24 -left-20 w-80 h-80 sm:w-[28rem] sm:h-[28rem] rounded-full bg-velza-darker/45 blur-3xl"></div>
 
-    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       
-      <!-- Signature VZ Monogram & VELZA Wordmark SVG Emblem -->
-      <div class="mx-auto w-56 sm:w-64 md:w-72 mb-6 drop-shadow-[0_12px_24px_rgba(20,40,44,0.28)]">
-        <svg viewBox="0 0 320 265" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VELZA Monogram Logo">
-          <!-- Graceful Rising Steam Wisps -->
-          <path d="M148 74C138 56 142 36 164 16C155 34 158 48 168 64C160 68 153 71 148 74Z" fill="#F4F7F6"/>
-          <path d="M169 68C164 53 168 38 183 25C177 38 179 49 185 60C179 63 174 66 169 68Z" fill="#F4F7F6" opacity="0.92"/>
-          
-          <!-- Serif Interlocking VZ Monogram -->
-          <!-- Left V -->
-          <path d="M84 82H118V86H111L141 154L163 100H174L143 176H134L93 86H84V82Z" fill="#F4F7F6"/>
-          <!-- Right Z -->
-          <path d="M159 82H236V88L169 170H225L232 157H237L228 176H152V170L219 88H166L159 99H154L159 82Z" fill="#F4F7F6"/>
-          <!-- Center Crossbar Accent -->
-          <rect x="148" y="125" width="32" height="5" rx="1" fill="#F4F7F6"/>
-
-          <!-- Geometric VELZA Wordmark -->
-          <g fill="#F4F7F6">
-            <!-- V -->
-            <path d="M44 205H53L69 239L85 205H94L72 250H66L44 205Z"/>
-            <!-- E -->
-            <path d="M106 205H138V212H114V224H135V231H114V243H139V250H106V205Z"/>
-            <!-- L -->
-            <path d="M153 205H161V243H184V250H153V205Z"/>
-            <!-- Z -->
-            <path d="M196 205H231V211L206 243H232V250H195V244L220 212H196V205Z"/>
-            <!-- A (Stylized Open Apex matching reference) -->
-            <path d="M261 205H267L289 250H280L264 216L248 250H239L261 205Z"/>
-          </g>
-        </svg>
+      <!-- Original Borderless Hero Logo (Blends seamlessly into teal background) -->
+      <div class="mx-auto mb-5 sm:mb-7 flex justify-center">
+        <img 
+          src="logo.webp" 
+          alt="VELZA Bahawalpur" 
+          onerror="this.onerror=null;this.src='https://placehold.co/320x240/42828A/F6F8F7?text=VELZA';"
+          class="velza-logo w-48 sm:w-64 md:w-72 h-auto object-contain select-none"
+        />
       </div>
 
-      <!-- Location Pill -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs sm:text-sm tracking-wider uppercase text-velza-cream/95 mb-5">
+      <!-- Location & Hours Pill -->
+      <div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-velza-darker/40 text-xs sm:text-sm tracking-wide text-velza-cream/95 mb-4">
         <span class="text-velza-goldlight">✦</span>
-        <span>Model Town B, Bahawalpur • Open 12 PM – 12 AM</span>
+        <span>Model Town B, Bahawalpur • 12 PM – 12 AM</span>
       </div>
 
       <!-- Tagline Headline -->
-      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-wide text-white leading-tight mb-5">
+      <h1 class="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-wide text-white leading-tight mb-3.5 sm:mb-5">
         Sip. <span class="text-velza-goldlight">Savour.</span> Smile.
       </h1>
 
       <!-- Subheadline -->
-      <p class="max-w-2xl mx-auto text-base sm:text-lg text-velza-cream/90 leading-relaxed mb-9">
-        An upscale sanctuary in the heart of Bahawalpur serving precision-brewed specialty coffee, gourmet artisan food, and fresh desserts crafted daily.
+      <p class="max-w-xl mx-auto text-sm sm:text-lg text-velza-cream/90 leading-relaxed mb-7 sm:mb-9 px-1">
+        Specialty coffee, gourmet artisan food, and fresh desserts crafted daily in the heart of Bahawalpur.
       </p>
 
-      <!-- Primary CTAs -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#menu" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl bg-velza-cream text-velza-charcoal font-bold text-sm sm:text-base shadow-xl hover:bg-white transition-all hover:-translate-y-0.5">
+      <!-- Mobile-First Full-Width Stacked -> Desktop Inline CTAs -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
+        <a href="#menu" class="min-h-[48px] inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl bg-velza-cream text-velza-charcoal font-bold text-sm sm:text-base shadow-lg hover:bg-white transition-all active:scale-[0.98]">
           <span>Explore Menu</span>
           <svg class="w-4 h-4 text-velza-teal" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </a>
 
-        <a href="https://wa.me/923127099198?text=Assalam-o-Alaikum%20VELZA!%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl bg-velza-darker/80 hover:bg-velza-darker text-white border border-white/25 font-semibold text-sm sm:text-base shadow-xl transition-all hover:-translate-y-0.5">
-          <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 24 24">
+        <a href="https://wa.me/923127099198?text=Assalam-o-Alaikum%20VELZA!%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener noreferrer" class="min-h-[48px] inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl bg-velza-darker/85 hover:bg-velza-darker text-white font-semibold text-sm sm:text-base shadow-lg transition-all active:scale-[0.98]">
+          <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
           </svg>
           <span>Order on WhatsApp</span>
         </a>
       </div>
 
-      <!-- Three Signature Pillars Strip -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-14 pt-10 border-t border-white/15 text-left">
-        <div class="flex items-start gap-3.5 p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-          <div class="w-10 h-10 rounded-xl bg-velza-gold/20 text-velza-goldlight flex items-center justify-center shrink-0 text-lg">☕</div>
+      <!-- Compact Mobile-First Signature Pillars -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-10 sm:mt-14 pt-8 border-t border-white/15 text-left">
+        <div class="flex items-center sm:items-start gap-3 p-3.5 sm:p-4 rounded-2xl bg-white/10 backdrop-blur-xs">
+          <span class="text-xl sm:text-2xl shrink-0">☕</span>
           <div>
             <h2 class="font-semibold text-white text-sm sm:text-base">Specialty Coffee</h2>
-            <p class="text-xs sm:text-sm text-velza-cream/75 mt-0.5">Single-origin espresso & velvety signatures.</p>
+            <p class="text-xs text-velza-cream/80 mt-0.5">Single-origin espresso & velvety signatures.</p>
           </div>
         </div>
-        <div class="flex items-start gap-3.5 p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-          <div class="w-10 h-10 rounded-xl bg-velza-gold/20 text-velza-goldlight flex items-center justify-center shrink-0 text-lg">🍕</div>
+        <div class="flex items-center sm:items-start gap-3 p-3.5 sm:p-4 rounded-2xl bg-white/10 backdrop-blur-xs">
+          <span class="text-xl sm:text-2xl shrink-0">🍕</span>
           <div>
             <h2 class="font-semibold text-white text-sm sm:text-base">Premium Food</h2>
-            <p class="text-xs sm:text-sm text-velza-cream/75 mt-0.5">Artisan flatbreads, pastas & gourmet platters.</p>
+            <p class="text-xs text-velza-cream/80 mt-0.5">Artisan pizzas, pastas & gourmet platters.</p>
           </div>
         </div>
-        <div class="flex items-start gap-3.5 p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-          <div class="w-10 h-10 rounded-xl bg-velza-gold/20 text-velza-goldlight flex items-center justify-center shrink-0 text-lg">🍰</div>
+        <div class="flex items-center sm:items-start gap-3 p-3.5 sm:p-4 rounded-2xl bg-white/10 backdrop-blur-xs">
+          <span class="text-xl sm:text-2xl shrink-0">🍰</span>
           <div>
             <h2 class="font-semibold text-white text-sm sm:text-base">Fresh Desserts Daily</h2>
-            <p class="text-xs sm:text-sm text-velza-cream/75 mt-0.5">Small-batch cheesecakes, tiramisu & warm bakes.</p>
+            <p class="text-xs text-velza-cream/80 mt-0.5">Small-batch cheesecakes, tiramisu & warm bakes.</p>
           </div>
         </div>
       </div>
@@ -232,39 +211,39 @@
   </section>
 
   <!-- ==================== ABOUT & CRAFT SECTION ==================== -->
-  <section id="about" class="py-20 sm:py-24 bg-white">
+  <section id="about" class="py-14 sm:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
-        <!-- Left Story & Craft Narrative -->
-        <div class="lg:col-span-6 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-velza-teal/10 text-velza-teal text-xs font-bold uppercase tracking-widest">
-            <span>The VELZA Philosophy</span>
-          </div>
+        <!-- Story & Craft Narrative -->
+        <div class="lg:col-span-6 space-y-5">
+          <span class="inline-block px-3 py-1 rounded-full bg-velza-light text-velza-teal text-xs font-bold uppercase tracking-widest">
+            The VELZA Philosophy
+          </span>
           
-          <h2 class="font-display text-3xl sm:text-4xl font-bold text-velza-charcoal leading-tight">
+          <h2 class="font-display text-2xl sm:text-4xl font-bold text-velza-charcoal leading-tight">
             Crafted for Conversations, Evening Cravings & Quiet Rituals.
           </h2>
           
-          <p class="text-velza-slate text-base sm:text-lg leading-relaxed">
-            Nestled near Fateh Chowk in Model Town B, <strong class="text-velza-charcoal font-semibold">VELZA</strong> brings an elevated contemporary cafe culture to Bahawalpur. From our afternoon pour-overs at 12:00 PM to late-night dessert runs until midnight, every detail is designed to make you slow down and savour the moment.
+          <p class="text-velza-slate text-sm sm:text-lg leading-relaxed">
+            Nestled near Fateh Chowk in Model Town B, <strong class="text-velza-charcoal font-semibold">VELZA</strong> brings a refined contemporary cafe culture to Bahawalpur. From afternoon pour-overs at 12:00 PM to late-night dessert runs until midnight, every plate and cup is prepared fresh.
           </p>
 
-          <div class="grid grid-cols-2 gap-4 pt-2">
-            <div class="p-4 rounded-2xl bg-velza-cream border border-velza-teal/15">
-              <p class="font-display text-2xl font-bold text-velza-teal">100% Fresh</p>
-              <p class="text-xs sm:text-sm text-velza-slate mt-1">Desserts baked & plated every single morning.</p>
+          <div class="grid grid-cols-2 gap-3 sm:gap-4 pt-1">
+            <div class="p-4 rounded-2xl bg-velza-cream">
+              <p class="font-display text-xl sm:text-2xl font-bold text-velza-teal">100% Fresh</p>
+              <p class="text-xs sm:text-sm text-velza-slate mt-1">Desserts baked & plated every single day.</p>
             </div>
-            <div class="p-4 rounded-2xl bg-velza-cream border border-velza-teal/15">
-              <p class="font-display text-2xl font-bold text-velza-teal">12 Hours</p>
+            <div class="p-4 rounded-2xl bg-velza-cream">
+              <p class="font-display text-xl sm:text-2xl font-bold text-velza-teal">12 Hours</p>
               <p class="text-xs sm:text-sm text-velza-slate mt-1">Open daily from 12:00 PM through 12:00 AM.</p>
             </div>
           </div>
 
-          <!-- Subtle Cultural & Protective Heritage Badge -->
-          <div class="p-5 rounded-2xl bg-gradient-to-r from-velza-deep to-velza-teal text-velza-cream flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-md">
+          <!-- Blessing & Heritage Card -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-velza-deep to-velza-teal text-velza-cream flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-sm">
             <div>
-              <span class="text-[11px] uppercase tracking-[0.2em] text-velza-goldlight font-semibold block">Blessing & Heritage</span>
+              <span class="text-[11px] uppercase tracking-[0.18em] text-velza-goldlight font-semibold block">Blessing & Gratitude</span>
               <p class="text-xs text-velza-cream/85 mt-0.5">Grateful for every guest who shares our table.</p>
             </div>
             <p class="font-arabic text-2xl sm:text-3xl text-white tracking-wide text-right" dir="rtl" lang="ar">
@@ -273,99 +252,97 @@
           </div>
         </div>
 
-        <!-- Right Visual Showcase Grid -->
-        <div class="lg:col-span-6 grid grid-cols-2 gap-4 sm:gap-5">
-          <div class="space-y-4 sm:space-y-5">
-            <div class="relative rounded-3xl overflow-hidden shadow-lg aspect-[4/5] bg-velza-teal/15">
-              <img 
-                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" 
-                onerror="this.onerror=null;this.src='https://placehold.co/600x750/42828A/F4F7F6?text=VELZA+Specialty+Coffee';" 
-                alt="VELZA Specialty Coffee Latte Art" 
-                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-              <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-velza-charcoal/85 via-velza-charcoal/40 to-transparent text-white">
-                <span class="text-xs uppercase tracking-wider text-velza-goldlight font-semibold">Barista Craft</span>
-                <p class="font-semibold text-sm sm:text-base">Velvet Spanish & Signature Lattes</p>
-              </div>
+        <!-- Visual Showcase Grid (Mobile 2-col responsive) -->
+        <div class="lg:col-span-6 grid grid-cols-2 gap-3 sm:gap-5">
+          <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-md aspect-[4/5] bg-velza-light">
+            <img 
+              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" 
+              onerror="this.onerror=null;this.src='https://placehold.co/600x750/42828A/F6F8F7?text=Specialty+Coffee';" 
+              alt="VELZA Specialty Coffee" 
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-x-0 bottom-0 p-3 sm:p-4 bg-gradient-to-t from-velza-charcoal/85 via-velza-charcoal/35 to-transparent text-white">
+              <span class="text-[10px] sm:text-xs uppercase tracking-wider text-velza-goldlight font-semibold">Barista Craft</span>
+              <p class="font-semibold text-xs sm:text-base">Signature Spanish & Velvet Lattes</p>
             </div>
           </div>
 
-          <div class="space-y-4 sm:space-y-5 pt-6 sm:pt-10">
-            <div class="relative rounded-3xl overflow-hidden shadow-lg aspect-square bg-velza-teal/15">
+          <div class="space-y-3 sm:space-y-5 pt-4 sm:pt-8">
+            <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-md aspect-square bg-velza-light">
               <img 
                 src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" 
-                onerror="this.onerror=null;this.src='https://placehold.co/600x600/33676E/F4F7F6?text=VELZA+Artisan+Pizza';" 
-                alt="VELZA Wood-Fired Artisan Pizza" 
-                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                onerror="this.onerror=null;this.src='https://placehold.co/600x600/2F636A/F6F8F7?text=Artisan+Pizza';" 
+                alt="VELZA Artisan Pizza" 
+                class="w-full h-full object-cover"
               />
-              <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-velza-charcoal/85 via-velza-charcoal/40 to-transparent text-white">
-                <span class="text-xs uppercase tracking-wider text-velza-goldlight font-semibold">Kitchen</span>
-                <p class="font-semibold text-sm sm:text-base">Artisan Stone-Baked Pizzas</p>
+              <div class="absolute inset-x-0 bottom-0 p-3 sm:p-4 bg-gradient-to-t from-velza-charcoal/85 via-velza-charcoal/35 to-transparent text-white">
+                <span class="text-[10px] sm:text-xs uppercase tracking-wider text-velza-goldlight font-semibold">Kitchen</span>
+                <p class="font-semibold text-xs sm:text-base">Stone-Baked Pizzas</p>
               </div>
             </div>
 
-            <div class="relative rounded-3xl overflow-hidden shadow-lg aspect-[4/3] bg-velza-teal/15">
+            <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-md aspect-[4/3] bg-velza-light">
               <img 
                 src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80" 
-                onerror="this.onerror=null;this.src='https://placehold.co/600x450/42828A/F4F7F6?text=Fresh+Daily+Desserts';" 
+                onerror="this.onerror=null;this.src='https://placehold.co/600x450/42828A/F6F8F7?text=Fresh+Desserts';" 
                 alt="VELZA Fresh Daily Desserts" 
-                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                class="w-full h-full object-cover"
               />
-              <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-velza-charcoal/85 via-velza-charcoal/40 to-transparent text-white">
-                <span class="text-xs uppercase tracking-wider text-velza-goldlight font-semibold">Patisserie</span>
-                <p class="font-semibold text-sm sm:text-base">Crafted Fresh Every Day</p>
+              <div class="absolute inset-x-0 bottom-0 p-3 sm:p-4 bg-gradient-to-t from-velza-charcoal/85 via-velza-charcoal/35 to-transparent text-white">
+                <span class="text-[10px] sm:text-xs uppercase tracking-wider text-velza-goldlight font-semibold">Patisserie</span>
+                <p class="font-semibold text-xs sm:text-base">Crafted Daily</p>
               </div>
             </div>
           </div>
-
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- ==================== INTERACTIVE MENU & ORDER BUILDER ==================== -->
-  <section id="menu" class="py-20 sm:py-24 bg-velza-cream border-y border-velza-teal/10">
+  <section id="menu" class="py-14 sm:py-24 bg-velza-cream">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="inline-block px-3.5 py-1 rounded-full bg-velza-teal/10 text-velza-teal text-xs font-bold uppercase tracking-widest mb-3">
+      <div class="text-center max-w-xl mx-auto mb-8 sm:mb-12">
+        <span class="inline-block px-3 py-1 rounded-full bg-velza-light text-velza-teal text-xs font-bold uppercase tracking-widest mb-2.5">
           Curated Menu
         </span>
-        <h2 class="font-display text-3xl sm:text-4xl font-bold text-velza-charcoal">
+        <h2 class="font-display text-2xl sm:text-4xl font-bold text-velza-charcoal">
           Savour Every Pour & Plate
         </h2>
-        <p class="text-velza-slate text-sm sm:text-base mt-3">
-          Select your favourites below to build your WhatsApp takeaway or dine-in pre-order tray.
+        <p class="text-velza-slate text-sm sm:text-base mt-2">
+          Tap items to build your takeaway or dine-in WhatsApp order tray.
         </p>
       </div>
 
-      <!-- Filter Tabs & Search Bar -->
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
-        <!-- Category Pills -->
-        <div id="menu-tabs" class="flex flex-wrap items-center justify-center gap-2">
-          <button data-category="all" onclick="filterMenu('all')" class="menu-tab active px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-velza-teal text-white shadow-md">
+      <!-- Mobile-First Horizontal Snap-Scroll Category Pills + Search -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3.5 mb-7 sm:mb-10">
+        <!-- Swipeable Category Bar on Mobile -->
+        <div id="menu-tabs" class="flex items-center gap-2 overflow-x-auto no-scrollbar snap-x py-1 -mx-4 px-4 sm:mx-0 sm:px-0">
+          <button data-category="all" onclick="filterMenu('all')" class="menu-tab active snap-start shrink-0 min-h-[44px] px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-velza-teal text-white shadow-sm">
             All Items
           </button>
-          <button data-category="coffee" onclick="filterMenu('coffee')" class="menu-tab px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-white text-velza-charcoal hover:bg-velza-teal/10 border border-velza-teal/15">
+          <button data-category="coffee" onclick="filterMenu('coffee')" class="menu-tab snap-start shrink-0 min-h-[44px] px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-velza-charcoal hover:bg-velza-light">
             ☕ Specialty Coffee
           </button>
-          <button data-category="food" onclick="filterMenu('food')" class="menu-tab px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-white text-velza-charcoal hover:bg-velza-teal/10 border border-velza-teal/15">
+          <button data-category="food" onclick="filterMenu('food')" class="menu-tab snap-start shrink-0 min-h-[44px] px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-velza-charcoal hover:bg-velza-light">
             🍕 Premium Food
           </button>
-          <button data-category="desserts" onclick="filterMenu('desserts')" class="menu-tab px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-white text-velza-charcoal hover:bg-velza-teal/10 border border-velza-teal/15">
+          <button data-category="desserts" onclick="filterMenu('desserts')" class="menu-tab snap-start shrink-0 min-h-[44px] px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-velza-charcoal hover:bg-velza-light">
             🍰 Fresh Desserts
           </button>
         </div>
 
-        <!-- Search Input -->
+        <!-- Touch-Friendly Search Input -->
         <div class="relative w-full md:w-72">
           <input 
             type="text" 
             id="menu-search" 
             oninput="searchMenu(this.value)" 
             placeholder="Search coffee, pizza, cheesecake..." 
-            class="w-full pl-10 pr-4 py-2.5 rounded-full bg-white border border-velza-teal/20 text-sm text-velza-charcoal placeholder-velza-slate/60 focus:outline-none focus:ring-2 focus:ring-velza-teal"
+            class="w-full min-h-[44px] pl-10 pr-4 py-2.5 rounded-full bg-white text-sm text-velza-charcoal placeholder-velza-slate/60 shadow-xs focus:outline-none focus:ring-2 focus:ring-velza-teal"
           />
           <svg class="w-4 h-4 text-velza-slate absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0z" />
@@ -373,56 +350,56 @@
         </div>
       </div>
 
-      <!-- Menu Cards Grid -->
-      <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Menu Cards Grid (1-col mobile -> 2-col tablet -> 3-col desktop) -->
+      <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         <!-- Populated dynamically via JS -->
       </div>
 
-      <!-- Bottom Quick Tray Banner -->
-      <div class="mt-12 p-6 sm:p-8 rounded-3xl bg-velza-deep text-velza-cream flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+      <!-- Quick Tray Banner -->
+      <div class="mt-10 p-5 sm:p-8 rounded-3xl bg-velza-deep text-velza-cream flex flex-col sm:flex-row items-center justify-between gap-5 shadow-lg">
         <div class="text-center sm:text-left">
-          <h3 class="font-display text-xl sm:text-2xl font-bold text-white">Ready to order from VELZA?</h3>
-          <p class="text-sm text-velza-cream/80 mt-1">Review your selected items or send a direct custom order via WhatsApp (<span class="font-semibold text-velza-goldlight">0312-7099198</span>).</p>
+          <h3 class="font-display text-lg sm:text-2xl font-bold text-white">Ready to order from VELZA?</h3>
+          <p class="text-xs sm:text-sm text-velza-cream/85 mt-1">Send your selected items directly to WhatsApp (<span class="font-semibold text-velza-goldlight">0312-7099198</span>).</p>
         </div>
-        <button onclick="toggleOrderDrawer(true)" class="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-velza-gold hover:bg-velza-goldlight text-velza-charcoal font-bold text-sm shadow-lg transition-all flex items-center justify-center gap-2 shrink-0">
-          <span>Open WhatsApp Order Tray</span>
+        <button onclick="toggleOrderDrawer(true)" class="w-full sm:w-auto min-h-[48px] px-6 py-3 rounded-2xl bg-velza-gold hover:bg-velza-goldlight text-velza-charcoal font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 shrink-0">
+          <span>Review Order Tray</span>
           <span id="banner-cart-count" class="px-2 py-0.5 rounded-full bg-velza-charcoal text-white text-xs">0</span>
         </button>
       </div>
     </div>
   </section>
 
-  <!-- ==================== TABLE RESERVATION & EVENT INQUIRY ==================== -->
-  <section id="reserve" class="py-20 sm:py-24 bg-white">
+  <!-- ==================== TABLE RESERVATION SECTION ==================== -->
+  <section id="reserve" class="py-14 sm:py-24 bg-white">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="rounded-3xl bg-velza-teal text-velza-cream overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12">
+      <div class="rounded-3xl bg-velza-teal text-velza-cream overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-12">
         
         <!-- Left Info Panel -->
-        <div class="lg:col-span-5 bg-velza-darker p-8 sm:p-10 flex flex-col justify-between">
+        <div class="lg:col-span-5 bg-velza-darker p-6 sm:p-10 flex flex-col justify-between">
           <div>
-            <span class="inline-block px-3 py-1 rounded-full bg-velza-gold/20 text-velza-goldlight text-xs font-bold uppercase tracking-widest mb-4">
+            <span class="inline-block px-3 py-1 rounded-full bg-velza-gold/20 text-velza-goldlight text-xs font-bold uppercase tracking-widest mb-3">
               Table & Gatherings
             </span>
             <h2 class="font-display text-2xl sm:text-3xl font-bold text-white leading-snug">
               Reserve Your Table at VELZA
             </h2>
-            <p class="text-sm text-velza-cream/80 mt-3 leading-relaxed">
-              Planning an evening coffee catch-up, family dinner, or intimate birthday celebration in Bahawalpur? Reserve ahead for priority seating.
+            <p class="text-xs sm:text-sm text-velza-cream/80 mt-2.5 leading-relaxed">
+              Planning an evening coffee catch-up, family dinner, or birthday celebration in Bahawalpur? Book ahead for priority seating.
             </p>
           </div>
 
-          <div class="space-y-4 mt-8 pt-6 border-t border-white/15 text-sm">
+          <div class="space-y-3.5 mt-6 pt-5 border-t border-white/15 text-sm">
             <div class="flex items-center gap-3">
-              <span class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-velza-goldlight">⏱️</span>
+              <span class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center shrink-0">⏱️</span>
               <div>
-                <p class="font-semibold text-white">Daily Hours</p>
+                <p class="font-semibold text-white text-xs sm:text-sm">Daily Hours</p>
                 <p class="text-velza-cream/75 text-xs">12:00 PM – 12:00 AM (Midnight)</p>
               </div>
             </div>
             <div class="flex items-center gap-3">
-              <span class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-velza-goldlight">📞</span>
+              <span class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center shrink-0">📞</span>
               <div>
-                <p class="font-semibold text-white">Direct Concierge</p>
+                <p class="font-semibold text-white text-xs sm:text-sm">Direct Concierge</p>
                 <p class="text-velza-cream/75 text-xs">0312-7099198 (Call / WhatsApp)</p>
               </div>
             </div>
@@ -430,16 +407,16 @@
         </div>
 
         <!-- Right Reservation Form -->
-        <div class="lg:col-span-7 p-8 sm:p-10">
-          <form id="reservation-form" onsubmit="submitReservation(event)" class="space-y-5">
+        <div class="lg:col-span-7 p-6 sm:p-10">
+          <form id="reservation-form" onsubmit="submitReservation(event)" class="space-y-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label for="res-name" class="block text-xs font-semibold uppercase tracking-wider text-velza-cream/90 mb-1.5">Your Name *</label>
-                <input type="text" id="res-name" required placeholder="e.g., Zarrar Ahmed" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm focus:outline-none focus:ring-2 focus:ring-velza-goldlight" />
+                <input type="text" id="res-name" required placeholder="e.g., Zarrar Ahmed" class="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-white/15 text-white placeholder-white/60 text-sm focus:outline-none focus:ring-2 focus:ring-velza-goldlight" />
               </div>
               <div>
                 <label for="res-guests" class="block text-xs font-semibold uppercase tracking-wider text-velza-cream/90 mb-1.5">Number of Guests *</label>
-                <select id="res-guests" class="w-full px-4 py-3 rounded-xl bg-velza-deep border border-white/20 text-white text-sm focus:outline-none focus:ring-2 focus:ring-velza-goldlight">
+                <select id="res-guests" class="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-velza-deep text-white text-sm focus:outline-none focus:ring-2 focus:ring-velza-goldlight">
                   <option value="2 Guests">2 Guests</option>
                   <option value="3-4 Guests">3–4 Guests</option>
                   <option value="5-6 Guests">5–6 Guests</option>
@@ -451,11 +428,11 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label for="res-date" class="block text-xs font-semibold uppercase tracking-wider text-velza-cream/90 mb-1.5">Preferred Date *</label>
-                <input type="date" id="res-date" required class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white text-sm focus:outline-none focus:ring-2 focus:ring-velza-goldlight" />
+                <input type="date" id="res-date" required class="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-white/15 text-white text-sm focus:outline-none focus:ring-2 focus:ring-velza-goldlight" />
               </div>
               <div>
-                <label for="res-time" class="block text-xs font-semibold uppercase tracking-wider text-velza-cream/90 mb-1.5">Preferred Time (12 PM – 12 AM) *</label>
-                <select id="res-time" class="w-full px-4 py-3 rounded-xl bg-velza-deep border border-white/20 text-white text-sm focus:outline-none focus:ring-2 focus:ring-velza-goldlight">
+                <label for="res-time" class="block text-xs font-semibold uppercase tracking-wider text-velza-cream/90 mb-1.5">Preferred Time *</label>
+                <select id="res-time" class="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-velza-deep text-white text-sm focus:outline-none focus:ring-2 focus:ring-velza-goldlight">
                   <option value="12:30 PM">12:30 PM (Lunch)</option>
                   <option value="02:00 PM">02:00 PM</option>
                   <option value="04:30 PM">04:30 PM (Afternoon Coffee)</option>
@@ -468,11 +445,11 @@
             </div>
 
             <div>
-              <label for="res-notes" class="block text-xs font-semibold uppercase tracking-wider text-velza-cream/90 mb-1.5">Special Occasion or Seating Note (Optional)</label>
-              <input type="text" id="res-notes" placeholder="e.g., Birthday dessert setup, quiet corner table..." class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm focus:outline-none focus:ring-2 focus:ring-velza-goldlight" />
+              <label for="res-notes" class="block text-xs font-semibold uppercase tracking-wider text-velza-cream/90 mb-1.5">Special Notes (Optional)</label>
+              <input type="text" id="res-notes" placeholder="e.g., Birthday dessert setup, quiet corner..." class="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-white/15 text-white placeholder-white/60 text-sm focus:outline-none focus:ring-2 focus:ring-velza-goldlight" />
             </div>
 
-            <button type="submit" class="w-full py-4 px-6 rounded-2xl bg-velza-cream hover:bg-white text-velza-charcoal font-bold text-sm sm:text-base shadow-lg transition-all flex items-center justify-center gap-2.5">
+            <button type="submit" class="w-full min-h-[48px] py-3.5 px-6 rounded-2xl bg-velza-cream hover:bg-white text-velza-charcoal font-bold text-sm sm:text-base shadow-lg transition-all flex items-center justify-center gap-2 active:scale-[0.99]">
               <span>Confirm Table via WhatsApp</span>
               <svg class="w-4 h-4 text-velza-teal" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -485,49 +462,48 @@
   </section>
 
   <!-- ==================== LOCATION, HOURS & FOOTER ==================== -->
-  <footer id="visit" class="bg-velza-darker text-velza-cream pt-16 pb-10 border-t border-white/10">
+  <footer id="visit" class="bg-velza-darker text-velza-cream pt-12 sm:pt-16 pb-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Location & Map Highlight Card -->
-      <div class="rounded-3xl bg-velza-deep/80 border border-white/15 p-6 sm:p-10 mb-14 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div class="lg:col-span-6 space-y-4">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-velza-goldlight text-xs font-semibold uppercase tracking-wider">
-            <span>📍 Find Us in Bahawalpur</span>
-          </div>
+      <!-- Location & Map Card -->
+      <div class="rounded-3xl bg-velza-deep/85 p-5 sm:p-10 mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
+        <div class="lg:col-span-6 space-y-3.5">
+          <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-velza-goldlight text-xs font-semibold uppercase tracking-wider">
+            📍 Find Us in Bahawalpur
+          </span>
           <h3 class="font-display text-2xl sm:text-3xl font-bold text-white">Visit VELZA</h3>
           <p class="text-velza-cream/90 text-sm sm:text-base leading-relaxed">
             <strong>Fateh Chowk, near Ghalla Mandi Gate Number 1, Model Town B, Bahawalpur, Pakistan</strong>
           </p>
-          <div class="flex flex-wrap items-center gap-3 pt-2">
-            <a href="https://maps.app.goo.gl/Fk29AHsmSTmfQ2ys5" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-velza-gold hover:bg-velza-goldlight text-velza-charcoal font-bold text-sm shadow-md transition-all">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+            <a href="https://maps.app.goo.gl/Fk29AHsmSTmfQ2ys5" target="_blank" rel="noopener noreferrer" class="min-h-[46px] inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-velza-gold hover:bg-velza-goldlight text-velza-charcoal font-bold text-sm shadow-md transition-all">
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
-              <span>Get Directions on Google Maps</span>
+              <span>Open in Google Maps</span>
             </a>
-            <button onclick="copyAddress()" class="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-velza-cream text-sm font-medium border border-white/15 transition-colors">
+            <button onclick="copyAddress()" class="min-h-[46px] inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-velza-cream text-sm font-medium transition-colors">
               <span id="copy-addr-label">Copy Address</span>
             </button>
           </div>
         </div>
 
-        <!-- Styled Interactive Visual Map Card -->
+        <!-- Map Navigation Card -->
         <div class="lg:col-span-6">
-          <a href="https://maps.app.goo.gl/Fk29AHsmSTmfQ2ys5" target="_blank" rel="noopener noreferrer" class="group block relative rounded-2xl overflow-hidden border border-white/20 bg-velza-teal/30 p-6 sm:p-8 hover:border-velza-goldlight transition-all">
-            <!-- Stylized Map Grid Pattern -->
-            <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#F4F7F6 1px, transparent 1px); background-size: 18px 18px;"></div>
-            <div class="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <div class="space-y-1.5">
+          <a href="https://maps.app.goo.gl/Fk29AHsmSTmfQ2ys5" target="_blank" rel="noopener noreferrer" class="group block relative rounded-2xl overflow-hidden bg-velza-teal/35 p-5 sm:p-8 hover:bg-velza-teal/45 transition-all">
+            <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#F6F8F7 1px, transparent 1px); background-size: 16px 16px;"></div>
+            <div class="relative flex items-center justify-between gap-4">
+              <div class="space-y-1">
                 <div class="flex items-center gap-2">
-                  <span class="w-3 h-3 rounded-full bg-velza-goldlight ring-4 ring-velza-goldlight/30"></span>
-                  <span class="font-display font-bold text-lg text-white tracking-wider">VELZA — Model Town B</span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-velza-goldlight ring-4 ring-velza-goldlight/30"></span>
+                  <span class="font-display font-bold text-base sm:text-lg text-white tracking-wider">VELZA — Model Town B</span>
                 </div>
                 <p class="text-xs sm:text-sm text-velza-cream/85">Fateh Chowk • Near Ghalla Mandi Gate No. 1</p>
-                <p class="text-xs text-velza-goldlight font-medium pt-1">Tap card to open live navigation in Google Maps ↗</p>
+                <p class="text-xs text-velza-goldlight font-medium pt-1">Tap for live directions ↗</p>
               </div>
-              <div class="w-12 h-12 rounded-2xl bg-velza-cream text-velza-charcoal flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-lg">
-                <svg class="w-6 h-6 text-velza-teal" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-velza-cream text-velza-charcoal flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-md">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-velza-teal" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
                 </svg>
               </div>
@@ -536,27 +512,26 @@
         </div>
       </div>
 
-      <!-- Footer Columns -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-white/10">
+      <!-- Footer Columns with Borderless Logo -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-10 border-b border-white/10">
         <!-- Brand Column -->
-        <div class="space-y-4">
-          <div class="flex items-center gap-3">
-            <span class="font-display text-2xl font-bold tracking-[0.22em] text-white">VELZA</span>
-            <span class="text-xs px-2.5 py-0.5 rounded-full bg-white/10 text-velza-goldlight">Sip. Savour. Smile.</span>
-          </div>
-          <p class="text-sm text-velza-cream/75 leading-relaxed">
-            Premium Food, Specialty Coffee & Fresh Desserts Crafted Daily in Bahawalpur.
+        <div class="space-y-3.5">
+          <img 
+            src="logo.webp" 
+            alt="VELZA Logo" 
+            onerror="this.onerror=null;this.src='https://placehold.co/160x64/21484E/F6F8F7?text=VELZA';"
+            class="velza-logo h-12 w-auto object-contain select-none"
+          />
+          <p class="text-sm text-velza-cream/80 leading-relaxed">
+            Sip. Savour. Smile. Premium Food, Specialty Coffee & Fresh Desserts Crafted Daily in Bahawalpur.
           </p>
-          <!-- Arabic Verse Calligraphy -->
-          <div class="pt-2">
-            <p class="font-arabic text-2xl text-velza-goldlight/95" dir="rtl" lang="ar">
-              مِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ
-            </p>
-          </div>
+          <p class="font-arabic text-2xl text-velza-goldlight/95 pt-1" dir="rtl" lang="ar">
+            مِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ
+          </p>
         </div>
 
         <!-- Hours & Contact Column -->
-        <div class="space-y-3 text-sm">
+        <div class="space-y-2.5 text-sm">
           <h4 class="font-display font-bold text-white uppercase tracking-wider text-xs">Hours & Contact</h4>
           <p class="text-velza-cream/85"><strong class="text-white">Open Daily:</strong> 12:00 PM – 12:00 AM</p>
           <p class="text-velza-cream/85">
@@ -573,13 +548,13 @@
         <div class="space-y-3 text-sm">
           <h4 class="font-display font-bold text-white uppercase tracking-wider text-xs">Connect With Us</h4>
           <div class="flex flex-wrap gap-3 pt-1">
-            <a href="https://www.instagram.com/velzapakistan/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors">
+            <a href="https://www.instagram.com/velzapakistan/" target="_blank" rel="noopener noreferrer" class="min-h-[44px] inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors">
               <svg class="w-4 h-4 text-velza-goldlight" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
               <span>Instagram</span>
             </a>
-            <a href="https://wa.me/923127099198" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600/90 hover:bg-emerald-600 text-white transition-colors">
+            <a href="https://wa.me/923127099198" target="_blank" rel="noopener noreferrer" class="min-h-[44px] inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600/90 hover:bg-emerald-600 text-white transition-colors">
               <span>WhatsApp Us</span>
             </a>
           </div>
@@ -587,24 +562,47 @@
       </div>
 
       <!-- Bottom Copyright -->
-      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-velza-cream/60">
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-velza-cream/65 text-center sm:text-left">
         <p>© <span id="current-year">2026</span> VELZA Bahawalpur. All rights reserved.</p>
         <p>Fateh Chowk, Model Town B, Bahawalpur</p>
       </div>
     </div>
   </footer>
 
-  <!-- ==================== SLIDE-OVER WHATSAPP ORDER TRAY DRAWER ==================== -->
+  <!-- ==================== FIXED MOBILE BOTTOM THUMB BAR ==================== -->
+  <nav aria-label="Mobile Quick Actions" class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-velza-darker/95 backdrop-blur-md text-velza-cream border-t border-white/10 px-3 py-2 shadow-[0_-6px_20px_rgba(0,0,0,0.18)]">
+    <div class="grid grid-cols-3 gap-2 max-w-md mx-auto">
+      <a href="#menu" class="min-h-[44px] flex flex-col items-center justify-center rounded-xl hover:bg-white/10 active:bg-white/15 text-[11px] font-semibold">
+        <span class="text-sm leading-none mb-1">☕</span>
+        <span>Menu</span>
+      </a>
+      <button onclick="toggleOrderDrawer(true)" class="min-h-[44px] flex items-center justify-center gap-1.5 rounded-xl bg-velza-gold text-velza-charcoal font-bold text-xs shadow-sm active:scale-95 transition-transform">
+        <span>Tray</span>
+        <span id="cart-badge-mobile" class="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 text-[11px] font-bold rounded-full bg-velza-charcoal text-white">0</span>
+      </button>
+      <a href="#reserve" class="min-h-[44px] flex flex-col items-center justify-center rounded-xl hover:bg-white/10 active:bg-white/15 text-[11px] font-semibold">
+        <span class="text-sm leading-none mb-1">📅</span>
+        <span>Reserve</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ==================== RESPONSIVE ORDER TRAY (BOTTOM-SHEET ON MOBILE / SIDE DRAWER ON DESKTOP) ==================== -->
   <div id="order-drawer-backdrop" onclick="toggleOrderDrawer(false)" class="fixed inset-0 bg-velza-charcoal/60 backdrop-blur-xs z-50 hidden transition-opacity"></div>
-  <aside id="order-drawer" class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+  <aside id="order-drawer" class="fixed inset-x-0 bottom-0 md:inset-x-auto md:top-0 md:right-0 md:bottom-0 w-full md:max-w-md max-h-[88vh] md:max-h-full rounded-t-3xl md:rounded-none bg-white z-50 shadow-2xl transform translate-y-full md:translate-y-0 md:translate-x-full transition-transform duration-300 flex flex-col">
     
+    <!-- Mobile Drag Handle Indicator -->
+    <div class="md:hidden pt-2.5 pb-1 bg-velza-deep rounded-t-3xl flex justify-center">
+      <span class="w-10 h-1 rounded-full bg-white/35"></span>
+    </div>
+
     <!-- Drawer Header -->
-    <div class="p-6 bg-velza-deep text-velza-cream flex items-center justify-between">
+    <div class="px-5 py-4 sm:p-6 bg-velza-deep text-velza-cream flex items-center justify-between">
       <div>
-        <h3 class="font-display text-xl font-bold text-white">Your VELZA Order Tray</h3>
+        <h3 class="font-display text-lg sm:text-xl font-bold text-white">Your VELZA Order Tray</h3>
         <p class="text-xs text-velza-cream/80 mt-0.5">Direct WhatsApp checkout • 0312-7099198</p>
       </div>
-      <button onclick="toggleOrderDrawer(false)" class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors" aria-label="Close Tray">
+      <button onclick="toggleOrderDrawer(false)" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors" aria-label="Close Tray">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
         </svg>
@@ -612,15 +610,15 @@
     </div>
 
     <!-- Cart Items List -->
-    <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4">
+    <div id="cart-items-container" class="flex-1 overflow-y-auto p-5 sm:p-6 space-y-3.5">
       <!-- Rendered dynamically -->
     </div>
 
     <!-- Drawer Footer & WhatsApp Send -->
-    <div class="p-6 bg-velza-cream border-t border-velza-teal/15 space-y-4">
+    <div class="p-5 sm:p-6 bg-velza-cream border-t border-velza-teal/15 space-y-3.5">
       <div>
         <label for="order-type" class="block text-xs font-semibold uppercase tracking-wider text-velza-slate mb-1.5">Order Type</label>
-        <select id="order-type" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-velza-teal/20 text-sm text-velza-charcoal font-medium focus:outline-none focus:ring-2 focus:ring-velza-teal">
+        <select id="order-type" class="w-full min-h-[44px] px-3.5 py-2.5 rounded-xl bg-white text-sm text-velza-charcoal font-medium shadow-xs focus:outline-none focus:ring-2 focus:ring-velza-teal">
           <option value="Takeaway / Self-Pickup">Takeaway / Self-Pickup (Model Town B)</option>
           <option value="Dine-In Pre-Order">Dine-In Table Pre-Order</option>
           <option value="Delivery Inquiry (Bahawalpur)">Delivery Inquiry (Bahawalpur)</option>
@@ -632,7 +630,7 @@
         <span id="cart-total" class="text-lg text-velza-teal">Rs. 0</span>
       </div>
 
-      <button onclick="sendOrderToWhatsApp()" id="send-wa-order-btn" class="w-full py-4 px-5 rounded-2xl bg-velza-teal hover:bg-velza-deep text-white font-bold text-sm shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+      <button onclick="sendOrderToWhatsApp()" id="send-wa-order-btn" class="w-full min-h-[48px] py-3.5 px-5 rounded-2xl bg-velza-teal hover:bg-velza-deep text-white font-bold text-sm shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
         <span>Send Order on WhatsApp</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -642,8 +640,8 @@
   </aside>
 
   <!-- ==================== TOAST NOTIFICATION ==================== -->
-  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-300 translate-y-3">
-    <div id="toast-message" class="px-5 py-3 rounded-full bg-velza-charcoal text-white text-xs sm:text-sm font-medium shadow-xl border border-white/10">
+  <div id="toast" class="fixed bottom-20 md:bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-300 translate-y-3">
+    <div id="toast-message" class="px-4 py-2.5 rounded-full bg-velza-charcoal text-white text-xs sm:text-sm font-medium shadow-xl whitespace-nowrap">
       Added to your VELZA tray
     </div>
   </div>
@@ -773,7 +771,6 @@
     function updateCafeOpenStatus() {
       try {
         const now = new Date();
-        // Convert current time to PKT (Asia/Karachi)
         const pktTimeString = now.toLocaleString('en-US', { timeZone: 'Asia/Karachi', hour12: false, hour: '2-digit', minute: '2-digit' });
         const [hourStr] = pktTimeString.split(':');
         const pktHour = parseInt(hourStr, 10);
@@ -783,22 +780,16 @@
 
         const statusDot = document.getElementById('status-dot');
         const statusText = document.getElementById('status-text');
-        const mobileDot = document.getElementById('mobile-status-dot');
-        const mobileText = document.getElementById('mobile-status-text');
 
         if (isOpen) {
-          statusDot.className = 'w-2 h-2 rounded-full bg-emerald-400 animate-pulse';
-          statusText.textContent = 'Open Now • Till 12 AM';
-          mobileDot.className = 'w-2 h-2 rounded-full bg-emerald-400';
-          mobileText.textContent = 'Open Now • 12:00 PM – 12:00 AM';
+          statusDot.className = 'w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0';
+          statusText.textContent = 'Open • Till 12 AM';
         } else {
-          statusDot.className = 'w-2 h-2 rounded-full bg-amber-400';
-          statusText.textContent = 'Opens at 12:00 PM';
-          mobileDot.className = 'w-2 h-2 rounded-full bg-amber-400';
-          mobileText.textContent = 'Currently Closed • Opens 12:00 PM';
+          statusDot.className = 'w-2 h-2 rounded-full bg-amber-400 shrink-0';
+          statusText.textContent = 'Opens 12:00 PM';
         }
       } catch (e) {
-        document.getElementById('status-text').textContent = '12:00 PM – 12:00 AM';
+        document.getElementById('status-text').textContent = '12 PM – 12 AM';
       }
     }
 
@@ -837,34 +828,34 @@
         const qty = inCart ? inCart.qty : 0;
 
         return `
-          <article class="bg-white rounded-3xl p-6 border border-velza-teal/12 shadow-sm hover:shadow-xl hover:border-velza-teal/30 transition-all flex flex-col justify-between">
+          <article class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between">
             <div>
-              <div class="flex items-center justify-between gap-2 mb-3">
-                <span class="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-velza-teal/10 text-velza-teal">
+              <div class="flex items-center justify-between gap-2 mb-2.5">
+                <span class="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-velza-light text-velza-teal">
                   ${item.tag}
                 </span>
                 <span class="font-bold text-base text-velza-charcoal">
                   Rs. ${item.price.toLocaleString()}
                 </span>
               </div>
-              <h3 class="font-display text-lg font-bold text-velza-charcoal leading-snug mb-2">
+              <h3 class="font-display text-base sm:text-lg font-bold text-velza-charcoal leading-snug mb-1.5">
                 ${item.name}
               </h3>
-              <p class="text-sm text-velza-slate leading-relaxed">
+              <p class="text-xs sm:text-sm text-velza-slate leading-relaxed">
                 ${item.description}
               </p>
             </div>
 
-            <div class="pt-5 mt-5 border-t border-velza-cream flex items-center justify-between">
+            <div class="pt-4 mt-4 border-t border-velza-cream flex items-center justify-between">
               ${qty === 0 ? `
-                <button onclick="addToCart('${item.id}')" class="w-full py-2.5 px-4 rounded-xl bg-velza-cream hover:bg-velza-teal text-velza-charcoal hover:text-white font-semibold text-sm transition-colors flex items-center justify-center gap-2">
+                <button onclick="addToCart('${item.id}')" class="w-full min-h-[44px] py-2.5 px-4 rounded-xl bg-velza-cream hover:bg-velza-teal text-velza-charcoal hover:text-white font-semibold text-xs sm:text-sm transition-colors flex items-center justify-center gap-2 active:scale-[0.98]">
                   <span>+ Add to Order Tray</span>
                 </button>
               ` : `
-                <div class="w-full flex items-center justify-between bg-velza-teal/10 rounded-xl p-1">
-                  <button onclick="updateQty('${item.id}', -1)" class="w-9 h-9 rounded-lg bg-white text-velza-charcoal font-bold shadow-xs hover:bg-velza-cream transition-colors">−</button>
-                  <span class="text-sm font-bold text-velza-teal">${qty} in Tray</span>
-                  <button onclick="updateQty('${item.id}', 1)" class="w-9 h-9 rounded-lg bg-velza-teal text-white font-bold shadow-xs hover:bg-velza-deep transition-colors">+</button>
+                <div class="w-full flex items-center justify-between bg-velza-light rounded-xl p-1">
+                  <button onclick="updateQty('${item.id}', -1)" class="w-10 h-10 rounded-lg bg-white text-velza-charcoal font-bold shadow-xs hover:bg-velza-cream transition-colors">−</button>
+                  <span class="text-xs sm:text-sm font-bold text-velza-teal">${qty} in Tray</span>
+                  <button onclick="updateQty('${item.id}', 1)" class="w-10 h-10 rounded-lg bg-velza-teal text-white font-bold shadow-xs hover:bg-velza-deep transition-colors">+</button>
                 </div>
               `}
             </div>
@@ -878,9 +869,9 @@
       activeCategory = category;
       document.querySelectorAll('.menu-tab').forEach(btn => {
         if (btn.dataset.category === category) {
-          btn.className = 'menu-tab active px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-velza-teal text-white shadow-md';
+          btn.className = 'menu-tab active snap-start shrink-0 min-h-[44px] px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-velza-teal text-white shadow-sm';
         } else {
-          btn.className = 'menu-tab px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-white text-velza-charcoal hover:bg-velza-teal/10 border border-velza-teal/15';
+          btn.className = 'menu-tab snap-start shrink-0 min-h-[44px] px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-velza-charcoal hover:bg-velza-light';
         }
       });
       renderMenu();
@@ -922,7 +913,8 @@
 
     function renderCart() {
       const container = document.getElementById('cart-items-container');
-      const badge = document.getElementById('cart-badge');
+      const badgeDesktop = document.getElementById('cart-badge-desktop');
+      const badgeMobile = document.getElementById('cart-badge-mobile');
       const bannerCount = document.getElementById('banner-cart-count');
       const totalEl = document.getElementById('cart-total');
       const sendBtn = document.getElementById('send-wa-order-btn');
@@ -930,32 +922,33 @@
       const totalQty = cart.reduce((sum, i) => sum + i.qty, 0);
       const totalPrice = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
 
-      badge.textContent = totalQty;
-      bannerCount.textContent = totalQty;
+      if (badgeDesktop) badgeDesktop.textContent = totalQty;
+      if (badgeMobile) badgeMobile.textContent = totalQty;
+      if (bannerCount) bannerCount.textContent = totalQty;
       totalEl.textContent = `Rs. ${totalPrice.toLocaleString()}`;
       sendBtn.disabled = cart.length === 0;
 
       if (cart.length === 0) {
         container.innerHTML = `
-          <div class="h-full flex flex-col items-center justify-center text-center py-12">
-            <div class="w-16 h-16 rounded-2xl bg-velza-teal/10 text-velza-teal flex items-center justify-center text-2xl mb-4">☕</div>
-            <h4 class="font-display font-bold text-lg text-velza-charcoal">Your tray is empty</h4>
-            <p class="text-sm text-velza-slate max-w-xs mt-1">Explore our specialty coffee, artisan food, or daily desserts to build a WhatsApp order.</p>
+          <div class="h-full flex flex-col items-center justify-center text-center py-10">
+            <div class="w-14 h-14 rounded-2xl bg-velza-light text-velza-teal flex items-center justify-center text-2xl mb-3">☕</div>
+            <h4 class="font-display font-bold text-base sm:text-lg text-velza-charcoal">Your tray is empty</h4>
+            <p class="text-xs sm:text-sm text-velza-slate max-w-xs mt-1">Select specialty coffee, artisan food, or daily desserts to build a WhatsApp order.</p>
           </div>
         `;
         return;
       }
 
       container.innerHTML = cart.map(item => `
-        <div class="flex items-center justify-between gap-3 p-4 rounded-2xl bg-velza-cream border border-velza-teal/15">
+        <div class="flex items-center justify-between gap-3 p-3.5 rounded-2xl bg-velza-cream">
           <div class="min-w-0">
             <h4 class="font-semibold text-sm text-velza-charcoal truncate">${item.name}</h4>
             <p class="text-xs text-velza-slate mt-0.5">Rs. ${item.price.toLocaleString()} each</p>
           </div>
-          <div class="flex items-center gap-2 shrink-0">
-            <button onclick="updateQty('${item.id}', -1)" class="w-7 h-7 rounded-lg bg-white border border-velza-teal/20 text-velza-charcoal font-bold text-sm">−</button>
+          <div class="flex items-center gap-1.5 shrink-0">
+            <button onclick="updateQty('${item.id}', -1)" class="w-9 h-9 rounded-lg bg-white text-velza-charcoal font-bold text-sm shadow-xs">−</button>
             <span class="w-6 text-center text-sm font-bold text-velza-charcoal">${item.qty}</span>
-            <button onclick="updateQty('${item.id}', 1)" class="w-7 h-7 rounded-lg bg-velza-teal text-white font-bold text-sm">+</button>
+            <button onclick="updateQty('${item.id}', 1)" class="w-9 h-9 rounded-lg bg-velza-teal text-white font-bold text-sm">+</button>
           </div>
         </div>
       `).join('');
@@ -1007,16 +1000,16 @@
       showToast('Opening WhatsApp to confirm your table...');
     }
 
-    // Drawer & Mobile Menu Toggles
+    // Drawer & Mobile Menu Toggles (Bottom-sheet on mobile, Side drawer on desktop)
     function toggleOrderDrawer(open) {
       const drawer = document.getElementById('order-drawer');
       const backdrop = document.getElementById('order-drawer-backdrop');
       if (open) {
         backdrop.classList.remove('hidden');
-        drawer.classList.remove('translate-x-full');
+        drawer.classList.remove('translate-y-full', 'md:translate-x-full');
       } else {
         backdrop.classList.add('hidden');
-        drawer.classList.add('translate-x-full');
+        drawer.classList.add('translate-y-full', 'md:translate-x-full');
       }
     }
 
