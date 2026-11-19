@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#56989B" />
   <title>VELZA — Sip. Savour. Smile. | Bahawalpur</title>
   <meta name="description" content="VELZA Artisanal Café in Model Town B, Bahawalpur. Specialty Coffee, Premium Food & Fresh Desserts Crafted Daily. Open 12:00 PM – 12:00 AM." />
+  <meta property="og:title" content="VELZA Artisanal Café — Bahawalpur" />
+  <meta property="og:description" content="Sip. Savour. Smile. Specialty coffee, steaks, burgers, and fresh desserts at Fateh Chowk, Model Town B, Bahawalpur." />
+  <meta property="og:type" content="website" />
 
   <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans & Amiri -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -315,100 +319,39 @@
         </div>
       </section>
 
-      <!-- Signature Pours Editorial Showcase (Proper Portrait Aspect-[4/5] Cards, Zero Tiny Cropping) -->
-      <section class="py-14 sm:py-20 bg-velza-cream">
+      <!-- Mobile-First Main Menu Highlights Section -->
+      <section class="py-12 sm:py-20 bg-velza-cream">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-10">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-9">
             <div>
               <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-velza-light text-velza-teal text-xs font-bold uppercase tracking-widest mb-2">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3"/></svg>
-                <span>Signature Pours</span>
+                <span>Main Menu Highlights</span>
               </span>
               <h2 class="font-display text-3xl sm:text-4xl font-bold text-velza-charcoal">
-                Crafted to Sip &amp; Savour
+                Signature Favorites at VELZA
               </h2>
-              <p class="text-velza-slate text-sm sm:text-base mt-1.5 max-w-xl">
-                Our house-favorite chilled creations photographed right at our Bahawalpur brew bar.
+              <p class="text-velza-slate text-sm sm:text-base mt-1 max-w-xl">
+                Order our most-loved coffees, steaks, burgers, and desserts directly, or explore our complete 90+ item menu.
               </p>
             </div>
-            <a href="#menu" onclick="navigateTo('menu'); return false;" class="min-h-[44px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-white hover:bg-velza-light text-velza-darker font-bold text-xs sm:text-sm shadow-xs border border-velza-teal/20 transition-all self-start sm:self-auto">
-              <span>Browse All 90+ Items</span>
-              <svg class="w-4 h-4 text-velza-teal" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"/><path stroke-linecap="round" stroke-linejoin="round" d="m12 5 7 7-7 7"/></svg>
+            <a href="#menu" onclick="navigateTo('menu'); return false;" class="hidden sm:inline-flex min-h-[46px] items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-velza-teal hover:bg-velza-deep text-white font-bold text-sm shadow-xs transition-all shrink-0">
+              <span>Full Menu</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"/><path stroke-linecap="round" stroke-linejoin="round" d="m12 5 7 7-7 7"/></svg>
             </a>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            <!-- Portrait Card 1: Strawberry Matcha -->
-            <article class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-velza-teal/15 transition-all flex flex-col">
-              <div class="relative aspect-[4/5] w-full overflow-hidden bg-velza-light">
-                <img 
-                  src="Mtcha berry.png" 
-                  onerror="this.onerror=null;this.src='https://placehold.co/800x1000/2F636A/F6F8F7?text=Velza+Matcha+Berry';" 
-                  alt="Velza Matcha Berry — Strawberry Matcha" 
-                  class="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
-                />
-                <button type="button" onclick="openLightbox(5)" aria-label="Expand Strawberry Matcha Photo" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-velza-charcoal/55 hover:bg-velza-teal text-white backdrop-blur-xs flex items-center justify-center transition-colors">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                </button>
-              </div>
-              <div class="p-5 sm:p-7 flex-1 flex flex-col justify-between gap-4">
-                <div>
-                  <div class="flex items-center justify-between gap-2">
-                    <span class="text-xs font-bold uppercase tracking-widest text-velza-teal">Matcha Bar</span>
-                    <span class="font-display text-xl sm:text-2xl font-bold text-velza-darker">Rs. 699</span>
-                  </div>
-                  <h3 class="font-display text-2xl font-bold text-velza-charcoal mt-1">Strawberry Matcha</h3>
-                  <p class="text-sm text-velza-slate mt-1.5 leading-relaxed">
-                    Layered ceremonial green matcha whisked over velvet cream and crushed strawberry compote.
-                  </p>
-                </div>
-                <div class="flex items-center gap-3 pt-1">
-                  <button type="button" onclick="addToCart('strawberry-matcha')" class="flex-1 min-h-[48px] px-5 py-3 rounded-2xl bg-velza-teal hover:bg-velza-deep text-white font-bold text-sm shadow-sm transition-all active:scale-[0.98] inline-flex items-center justify-center gap-2">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
-                    <span>Add to Order Tray</span>
-                  </button>
-                  <a href="#menu?cat=coffee-tea" onclick="navigateTo('menu', { cat: 'coffee-tea' }); return false;" class="min-h-[48px] px-4 py-3 rounded-2xl bg-velza-light hover:bg-velza-teal/15 text-velza-darker font-semibold text-xs sm:text-sm inline-flex items-center justify-center transition-colors">
-                    Matcha Menu
-                  </a>
-                </div>
-              </div>
-            </article>
+          <!-- Dynamic Featured Main Items Grid -->
+          <div id="home-featured-menu" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
+            <!-- Rendered dynamically via renderHomeFeaturedMenu() -->
+          </div>
 
-            <!-- Portrait Card 2: Velza Special Shake -->
-            <article class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-velza-teal/15 transition-all flex flex-col">
-              <div class="relative aspect-[4/5] w-full overflow-hidden bg-velza-light">
-                <img 
-                  src="shake.jpg" 
-                  onerror="this.onerror=null;this.src='https://placehold.co/800x1000/21484E/F6F8F7?text=Velza+Special+Shake';" 
-                  alt="Velza Special Shake" 
-                  class="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
-                />
-                <button type="button" onclick="openLightbox(6)" aria-label="Expand Velza Special Shake Photo" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-velza-charcoal/55 hover:bg-velza-teal text-white backdrop-blur-xs flex items-center justify-center transition-colors">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                </button>
-              </div>
-              <div class="p-5 sm:p-7 flex-1 flex flex-col justify-between gap-4">
-                <div>
-                  <div class="flex items-center justify-between gap-2">
-                    <span class="text-xs font-bold uppercase tracking-widest text-velza-teal">Signature Shakes</span>
-                    <span class="font-display text-xl sm:text-2xl font-bold text-velza-darker">Rs. 799</span>
-                  </div>
-                  <h3 class="font-display text-2xl font-bold text-velza-charcoal mt-1">Velza Special Shake</h3>
-                  <p class="text-sm text-velza-slate mt-1.5 leading-relaxed">
-                    Rich house-blended artisan shake finished with tall whipped cream, roasted nuts, and dark chocolate drizzle.
-                  </p>
-                </div>
-                <div class="flex items-center gap-3 pt-1">
-                  <button type="button" onclick="addToCart('velza-special-shake')" class="flex-1 min-h-[48px] px-5 py-3 rounded-2xl bg-velza-teal hover:bg-velza-deep text-white font-bold text-sm shadow-sm transition-all active:scale-[0.98] inline-flex items-center justify-center gap-2">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
-                    <span>Add to Order Tray</span>
-                  </button>
-                  <a href="#menu?cat=cold-beverages" onclick="navigateTo('menu', { cat: 'cold-beverages' }); return false;" class="min-h-[48px] px-4 py-3 rounded-2xl bg-velza-light hover:bg-velza-teal/15 text-velza-darker font-semibold text-xs sm:text-sm inline-flex items-center justify-center transition-colors">
-                    All Shakes
-                  </a>
-                </div>
-              </div>
-            </article>
+          <!-- Prominent Full-Width Mobile & Desktop Full Menu CTA -->
+          <div class="mt-7 sm:mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a href="#menu" onclick="navigateTo('menu'); return false;" class="w-full sm:w-auto min-h-[50px] inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-2xl bg-velza-darker hover:bg-velza-charcoal text-white font-bold text-sm sm:text-base shadow-md transition-all active:scale-[0.98]">
+              <span>View Full Menu (90+ Items)</span>
+              <svg class="w-4 h-4 text-velza-goldlight" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"/><path stroke-linecap="round" stroke-linejoin="round" d="m12 5 7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
       </section>
@@ -426,15 +369,16 @@
               </h2>
             </div>
             <a href="#gallery" onclick="navigateTo('gallery'); return false;" class="min-h-[44px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-velza-teal hover:bg-velza-deep text-white font-bold text-xs sm:text-sm transition-all self-start sm:self-auto">
-              <span>View All 7 Photos</span>
+              <span>View All 5 Photos</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"/><path stroke-linecap="round" stroke-linejoin="round" d="m12 5 7 7-7 7"/></svg>
             </a>
           </div>
 
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+            <!-- cover.jpg = Main Dining Lounge -->
             <div class="lg:col-span-7 relative rounded-3xl overflow-hidden bg-velza-light aspect-[16/10] shadow-sm group">
               <img 
-                src="date spot.jpg" 
+                src="cover.jpg" 
                 onerror="this.onerror=null;this.src='https://placehold.co/960x600/2F636A/F6F8F7?text=Main+Dining+Lounge';" 
                 alt="VELZA Main Dining Lounge" 
                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
@@ -447,9 +391,10 @@
               </div>
             </div>
 
+            <!-- date spot.jpg = The Butterfly Corner -->
             <div class="lg:col-span-5 relative rounded-3xl overflow-hidden bg-velza-light aspect-[4/5] lg:aspect-auto shadow-sm group">
               <img 
-                src="cover.jpg" 
+                src="date spot.jpg" 
                 onerror="this.onerror=null;this.src='https://placehold.co/600x750/21484E/F6F8F7?text=Butterfly+Corner';" 
                 alt="The Butterfly Corner at VELZA" 
                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
@@ -482,7 +427,7 @@
 
             <div class="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-3">
               <a href="#reviews" onclick="navigateTo('reviews'); return false;" class="min-h-[48px] px-6 py-3.5 rounded-2xl bg-velza-gold hover:bg-velza-goldlight text-velza-charcoal font-bold text-sm inline-flex items-center justify-center gap-2 transition-all">
-                <span>Read All 6 Google Reviews</span>
+                <span>Read All Google Reviews</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"/><path stroke-linecap="round" stroke-linejoin="round" d="m12 5 7 7-7 7"/></svg>
               </a>
               <a href="#visit" onclick="navigateTo('visit'); return false;" class="min-h-[48px] px-6 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm inline-flex items-center justify-center gap-2 transition-all">
@@ -608,10 +553,10 @@
               Inside VELZA Bahawalpur
             </span>
             <h1 class="font-display text-3xl sm:text-5xl font-bold text-white">
-              The Space &amp; Signature Pours
+              The Space &amp; Brew Bar
             </h1>
             <p class="text-sm sm:text-base text-velza-cream/85 mt-2 max-w-2xl">
-              Explore our Fateh Chowk storefront, Main Dining Lounge, Butterfly Corner, espresso counter, and handcrafted cold beverages in full proportion.
+              Explore our Fateh Chowk storefront, Main Dining Lounge, Butterfly Corner, and artisanal espresso counter in full proportion.
             </p>
           </div>
 
@@ -624,11 +569,11 @@
 
       <section class="py-10 sm:py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <!-- Featured Wide Architectural Shot: date spot.jpg (Landscape) -->
+          <!-- Featured Wide Architectural Shot: cover.jpg = Main Dining Lounge -->
           <div class="mb-6 sm:mb-8">
             <button type="button" onclick="openLightbox(1)" class="group relative w-full rounded-3xl overflow-hidden bg-velza-deep shadow-md aspect-[16/10] sm:aspect-[16/9] text-left focus:outline-none focus:ring-2 focus:ring-velza-teal">
               <img 
-                src="date spot.jpg" 
+                src="cover.jpg" 
                 onerror="this.onerror=null;this.src='https://placehold.co/1200x675/2F636A/F6F8F7?text=Main+Dining+Lounge';" 
                 alt="VELZA Main Dining Lounge" 
                 class="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
@@ -645,8 +590,8 @@
             </button>
           </div>
 
-          <!-- 6 Portrait Cards in Proper Aspect-[4/5] Ratio (Zero Squishing) -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          <!-- 4 Architectural & Brew Bar Portrait Cards in Proper Aspect-[4/5] Ratio -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
             <!-- outside entrance.jpg -->
             <button type="button" onclick="openLightbox(0)" class="group relative rounded-3xl overflow-hidden bg-velza-deep shadow-md aspect-[4/5] text-left focus:outline-none focus:ring-2 focus:ring-velza-teal">
               <img src="outside entrance.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x750/21484E/F6F8F7?text=Storefront';" alt="VELZA Artisanal Café Entrance" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
@@ -657,9 +602,9 @@
               </div>
             </button>
 
-            <!-- cover.jpg -->
+            <!-- date spot.jpg = The Butterfly Corner -->
             <button type="button" onclick="openLightbox(2)" class="group relative rounded-3xl overflow-hidden bg-velza-deep shadow-md aspect-[4/5] text-left focus:outline-none focus:ring-2 focus:ring-velza-teal">
-              <img src="cover.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x750/2F636A/F6F8F7?text=Butterfly+Corner';" alt="The Butterfly Corner" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+              <img src="date spot.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x750/2F636A/F6F8F7?text=Butterfly+Corner';" alt="The Butterfly Corner" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
               <div class="absolute inset-0 bg-gradient-to-t from-velza-charcoal/85 via-velza-charcoal/15 to-transparent"></div>
               <div class="absolute inset-x-0 bottom-0 p-5 text-white">
                 <span class="text-[11px] font-bold uppercase tracking-widest text-velza-goldlight">Cozy Nook</span>
@@ -684,26 +629,6 @@
               <div class="absolute inset-x-0 bottom-0 p-5 text-white">
                 <span class="text-[11px] font-bold uppercase tracking-widest text-velza-goldlight">Specialty Beans</span>
                 <h3 class="font-display text-xl font-bold mt-0.5">Artisanal Coffee Counter</h3>
-              </div>
-            </button>
-
-            <!-- Mtcha berry.png -->
-            <button type="button" onclick="openLightbox(5)" class="group relative rounded-3xl overflow-hidden bg-velza-deep shadow-md aspect-[4/5] text-left focus:outline-none focus:ring-2 focus:ring-velza-teal">
-              <img src="Mtcha berry.png" onerror="this.onerror=null;this.src='https://placehold.co/600x750/56989B/F6F8F7?text=Matcha+Berry';" alt="Signature Matcha Berry" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
-              <div class="absolute inset-0 bg-gradient-to-t from-velza-charcoal/85 via-velza-charcoal/15 to-transparent"></div>
-              <div class="absolute inset-x-0 bottom-0 p-5 text-white">
-                <span class="text-[11px] font-bold uppercase tracking-widest text-velza-goldlight">Rs. 699</span>
-                <h3 class="font-display text-xl font-bold mt-0.5">Signature Matcha Berry</h3>
-              </div>
-            </button>
-
-            <!-- shake.jpg -->
-            <button type="button" onclick="openLightbox(6)" class="group relative rounded-3xl overflow-hidden bg-velza-deep shadow-md aspect-[4/5] text-left focus:outline-none focus:ring-2 focus:ring-velza-teal">
-              <img src="shake.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x750/21484E/F6F8F7?text=Special+Shake';" alt="Velza Special Shake" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
-              <div class="absolute inset-0 bg-gradient-to-t from-velza-charcoal/85 via-velza-charcoal/15 to-transparent"></div>
-              <div class="absolute inset-x-0 bottom-0 p-5 text-white">
-                <span class="text-[11px] font-bold uppercase tracking-widest text-velza-goldlight">Rs. 799</span>
-                <h3 class="font-display text-xl font-bold mt-0.5">Velza Special Shake</h3>
               </div>
             </button>
           </div>
@@ -848,8 +773,9 @@
                 </div>
               </button>
 
+              <!-- date spot.jpg = The Butterfly Corner -->
               <button type="button" onclick="openLightbox(2)" class="group relative rounded-3xl overflow-hidden bg-velza-deep shadow-md aspect-[4/5] text-left focus:outline-none">
-                <img src="cover.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x750/2F636A/F6F8F7?text=Butterfly+Corner';" alt="Butterfly Corner Seating" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+                <img src="date spot.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x750/2F636A/F6F8F7?text=Butterfly+Corner';" alt="Butterfly Corner Seating" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
                 <div class="absolute inset-0 bg-gradient-to-t from-velza-charcoal/85 via-transparent to-transparent"></div>
                 <div class="absolute inset-x-0 bottom-0 p-4 text-white">
                   <span class="text-[10px] font-bold uppercase tracking-widest text-velza-goldlight">Interior Nook</span>
@@ -895,7 +821,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label for="res-name" class="block text-xs font-semibold uppercase tracking-wider text-velza-cream/90 mb-1.5">Your Name *</label>
-                    <input type="text" id="res-name" required placeholder="e.g., Zarrar Ahmed" class="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-white/15 text-white placeholder-white/60 text-sm focus:outline-none focus:ring-2 focus:ring-velza-goldlight" />
+                    <input type="text" id="res-name" required placeholder="e.g., Usman Tariq" class="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-white/15 text-white placeholder-white/60 text-sm focus:outline-none focus:ring-2 focus:ring-velza-goldlight" />
                   </div>
                   <div>
                     <label for="res-guests" class="block text-xs font-semibold uppercase tracking-wider text-velza-cream/90 mb-1.5">Number of Guests *</label>
@@ -911,7 +837,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label for="res-date" class="block text-xs font-semibold uppercase tracking-wider text-velza-cream/90 mb-1.5">Preferred Date *</label>
-                    <input type="date" id="res-date" required class="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-white/15 text-white text-sm focus:outline-none focus:ring-2 focus:ring-velza-goldlight" />
+                    <input type="date" id="res-date" required class="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-white/15 text-white [color-scheme:dark] text-sm focus:outline-none focus:ring-2 focus:ring-velza-goldlight" />
                   </div>
                   <div>
                     <label for="res-time" class="block text-xs font-semibold uppercase tracking-wider text-velza-cream/90 mb-1.5">Preferred Time *</label>
@@ -1077,7 +1003,7 @@
         </div>
         <div>
           <label for="order-customer-name" class="block text-[11px] font-bold uppercase tracking-wider text-velza-slate mb-1">Your Name (Optional)</label>
-          <input type="text" id="order-customer-name" placeholder="e.g., Zarrar" class="w-full min-h-[42px] px-3 py-2 rounded-xl bg-white text-xs sm:text-sm text-velza-charcoal placeholder-velza-slate/50 border border-velza-teal/20 focus:outline-none focus:ring-2 focus:ring-velza-teal" />
+          <input type="text" id="order-customer-name" placeholder="e.g., Usman" class="w-full min-h-[42px] px-3 py-2 rounded-xl bg-white text-xs sm:text-sm text-velza-charcoal placeholder-velza-slate/50 border border-velza-teal/20 focus:outline-none focus:ring-2 focus:ring-velza-teal" />
         </div>
       </div>
 
@@ -1111,7 +1037,7 @@
   <!-- ==================== FULL-SCREEN PHOTO LIGHTBOX MODAL ==================== -->
   <div id="photo-lightbox" class="fixed inset-0 z-50 hidden bg-velza-charcoal/95 backdrop-blur-md flex flex-col justify-between p-4 sm:p-6">
     <div class="flex items-center justify-between text-white max-w-5xl w-full mx-auto">
-      <span id="lightbox-counter" class="text-xs sm:text-sm font-semibold text-velza-goldlight tracking-wider">1 / 7</span>
+      <span id="lightbox-counter" class="text-xs sm:text-sm font-semibold text-velza-goldlight tracking-wider">1 / 5</span>
       <button type="button" onclick="closeLightbox()" class="w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center transition-colors" aria-label="Close Gallery">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M18 6 6 18M6 6l12 12" />
@@ -1156,12 +1082,12 @@
         subtitle: "Fateh Chowk, near Ghalla Mandi Gate No. 1, Model Town B, Bahawalpur"
       },
       {
-        src: "date spot.jpg",
+        src: "cover.jpg",
         title: "Main Dining Lounge",
         subtitle: "Warm sage & teal seating hall designed for relaxed gatherings"
       },
       {
-        src: "cover.jpg",
+        src: "date spot.jpg",
         title: "The Butterfly Corner",
         subtitle: "Our signature illuminated butterfly bookshelf nook for two"
       },
@@ -1174,16 +1100,6 @@
         src: "counter 02.jpg",
         title: "Artisanal Coffee Counter",
         subtitle: "House-roasted VELZA coffee bags, syrups, and freshly pulled espresso"
-      },
-      {
-        src: "Mtcha berry.png",
-        title: "Signature Matcha Berry",
-        subtitle: "Strawberry Matcha — Fresh, creamy & refreshing (Rs. 699)"
-      },
-      {
-        src: "shake.jpg",
-        title: "Velza Special Shake",
-        subtitle: "Topped with whipped cream, crushed nuts & rich chocolate drizzle (Rs. 799)"
       }
     ];
 
@@ -1420,6 +1336,16 @@
       { id: "water-bottle", name: "Water", category: "cakes-addons", subCategory: "Other Dips", price: 60 }
     ];
 
+    // Curated Main Items for Home Page Showcase
+    const featuredMainItemIds = [
+      "iced-spanish",
+      "strawberry-matcha",
+      "black-pepper-steak",
+      "beef-smash",
+      "alfredo-pasta",
+      "nutella-brownie"
+    ];
+
     // 4. State & LocalStorage Persistence
     const STORAGE_KEY = "velza_cart_v2";
     const validPages = ["home", "menu", "gallery", "reviews", "visit"];
@@ -1539,6 +1465,7 @@
       updateCafeOpenStatus();
       setInterval(updateCafeOpenStatus, 60000);
       renderReviews();
+      renderHomeFeaturedMenu();
       renderMenu();
       renderCart();
 
@@ -1628,7 +1555,63 @@
       `).join("");
     }
 
-    // 9. Render Categorized Menu Sections & Bulletproof Inline Quantity Controls
+    // Helper: Build Mobile-First Menu Item Card HTML
+    function buildMenuItemCardHtml(item) {
+      const qty = cartMap[item.id] || 0;
+      return `
+        <article class="bg-white rounded-2xl p-4 sm:p-5 border border-velza-teal/15 shadow-2xs hover:shadow-md transition-all flex items-center justify-between gap-3">
+          <div class="min-w-0">
+            <span class="inline-block text-[10px] font-bold uppercase tracking-wider text-velza-teal mb-0.5">
+              ${item.subCategory}
+            </span>
+            <h3 class="font-semibold text-sm sm:text-base text-velza-charcoal leading-snug">
+              ${item.name}
+            </h3>
+            <p class="font-display text-lg sm:text-xl font-bold text-velza-darker mt-1">
+              PKR ${item.price.toLocaleString()}
+            </p>
+          </div>
+          <div class="shrink-0 flex items-center gap-1.5 sm:gap-2">
+            <button type="button" onclick="orderSingleItemWhatsApp('${item.id}')" title="Order ${item.name} directly on WhatsApp" aria-label="Order ${item.name} on WhatsApp" class="min-h-[44px] px-3 py-2 rounded-xl bg-velza-teal hover:bg-velza-deep text-white font-bold text-xs transition-colors active:scale-95 inline-flex items-center gap-1.5 shadow-2xs">
+              <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.1" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
+              <span>Order</span>
+            </button>
+            ${qty === 0 ? `
+              <button type="button" onclick="addToCart('${item.id}')" class="min-h-[44px] px-3 sm:px-3.5 py-2 rounded-xl bg-velza-light hover:bg-velza-darker text-velza-darker hover:text-white font-bold text-xs transition-colors active:scale-95 inline-flex items-center gap-1">
+                <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+                <span>Add</span>
+              </button>
+            ` : `
+              <div class="flex items-center gap-1 bg-velza-light rounded-xl p-1 border border-velza-teal/20">
+                <button type="button" onclick="updateQty('${item.id}', -1)" class="w-8 h-8 rounded-lg bg-white text-velza-charcoal flex items-center justify-center shadow-2xs hover:bg-velza-cream transition-colors" aria-label="Decrease quantity">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><line x1="5" x2="19" y1="12" y2="12"/></svg>
+                </button>
+                <span class="w-5 text-center text-xs font-bold text-velza-darker">${qty}</span>
+                <button type="button" onclick="updateQty('${item.id}', 1)" class="w-8 h-8 rounded-lg bg-velza-teal text-white flex items-center justify-center shadow-2xs hover:bg-velza-deep transition-colors" aria-label="Increase quantity">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+                </button>
+              </div>
+            `}
+          </div>
+        </article>
+      `;
+    }
+
+    // 9A. Render Featured Main Items on Home Page
+    function renderHomeFeaturedMenu() {
+      const container = document.getElementById("home-featured-menu");
+      if (!container) return;
+
+      const items = featuredMainItemIds
+        .map(id => menuItems.find(m => m.id === id))
+        .filter(Boolean);
+
+      container.innerHTML = items.map(buildMenuItemCardHtml).join("");
+    }
+
+    // 9B. Render Categorized Menu Sections & Bulletproof Inline Quantity Controls
     function renderMenu() {
       const container = document.getElementById("menu-sections-container");
       if (!container) return;
@@ -1681,49 +1664,7 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-              ${group.items.map(item => {
-                const qty = cartMap[item.id] || 0;
-
-                return `
-                  <article class="bg-white rounded-2xl p-4 sm:p-5 border border-velza-teal/15 shadow-2xs hover:shadow-md transition-all flex items-center justify-between gap-3">
-                    <div class="min-w-0">
-                      <span class="inline-block text-[10px] font-bold uppercase tracking-wider text-velza-teal mb-0.5">
-                        ${item.subCategory}
-                      </span>
-                      <h3 class="font-semibold text-sm sm:text-base text-velza-charcoal leading-snug">
-                        ${item.name}
-                      </h3>
-                      <p class="font-display text-lg sm:text-xl font-bold text-velza-darker mt-1">
-                        PKR ${item.price.toLocaleString()}
-                      </p>
-                    </div>
-                    <div class="shrink-0 flex items-center gap-1.5 sm:gap-2">
-                      <button type="button" onclick="orderSingleItemWhatsApp('${item.id}')" title="Order ${item.name} directly on WhatsApp" aria-label="Order ${item.name} on WhatsApp" class="min-h-[42px] px-2.5 sm:px-3 py-2 rounded-xl bg-velza-teal hover:bg-velza-deep text-white font-bold text-xs transition-colors active:scale-95 inline-flex items-center gap-1.5 shadow-2xs">
-                        <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.1" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-                        </svg>
-                        <span>Order</span>
-                      </button>
-                      ${qty === 0 ? `
-                        <button type="button" onclick="addToCart('${item.id}')" class="min-h-[42px] px-3 sm:px-3.5 py-2 rounded-xl bg-velza-light hover:bg-velza-darker text-velza-darker hover:text-white font-bold text-xs transition-colors active:scale-95 inline-flex items-center gap-1">
-                          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
-                          <span>Add</span>
-                        </button>
-                      ` : `
-                        <div class="flex items-center gap-1 bg-velza-light rounded-xl p-1 border border-velza-teal/20">
-                          <button type="button" onclick="updateQty('${item.id}', -1)" class="w-8 h-8 rounded-lg bg-white text-velza-charcoal flex items-center justify-center shadow-2xs hover:bg-velza-cream transition-colors" aria-label="Decrease quantity">
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><line x1="5" x2="19" y1="12" y2="12"/></svg>
-                          </button>
-                          <span class="w-5 text-center text-xs font-bold text-velza-darker">${qty}</span>
-                          <button type="button" onclick="updateQty('${item.id}', 1)" class="w-8 h-8 rounded-lg bg-velza-teal text-white flex items-center justify-center shadow-2xs hover:bg-velza-deep transition-colors" aria-label="Increase quantity">
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
-                          </button>
-                        </div>
-                      `}
-                    </div>
-                  </article>
-                `;
-              }).join("")}
+              ${group.items.map(buildMenuItemCardHtml).join("")}
             </div>
 
             ${showSignatureDipsBanner ? `
@@ -1807,6 +1748,7 @@
 
       cartMap[id] = (cartMap[id] || 0) + 1;
       saveCartToStorage();
+      renderHomeFeaturedMenu();
       renderMenu();
       renderCart();
       showToast(`Added "${item.name}" to tray`);
@@ -1821,6 +1763,7 @@
         cartMap[id] = nextQty;
       }
       saveCartToStorage();
+      renderHomeFeaturedMenu();
       renderMenu();
       renderCart();
     }
@@ -1828,6 +1771,7 @@
     function clearCart() {
       cartMap = {};
       saveCartToStorage();
+      renderHomeFeaturedMenu();
       renderMenu();
       renderCart();
       showToast("Order tray cleared");
