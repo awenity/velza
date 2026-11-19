@@ -1693,24 +1693,29 @@
                       <h3 class="font-semibold text-sm sm:text-base text-velza-charcoal leading-snug">
                         ${item.name}
                       </h3>
-                      <p class="font-bold text-sm sm:text-base text-velza-deep mt-1">
-                        Rs. ${item.price.toLocaleString()}
+                      <p class="font-display text-lg sm:text-xl font-bold text-velza-darker mt-1">
+                        PKR ${item.price.toLocaleString()}
                       </p>
                     </div>
-
-                    <div class="shrink-0">
+                    <div class="shrink-0 flex items-center gap-1.5 sm:gap-2">
+                      <button type="button" onclick="orderSingleItemWhatsApp('${item.id}')" title="Order ${item.name} directly on WhatsApp" aria-label="Order ${item.name} on WhatsApp" class="min-h-[42px] px-2.5 sm:px-3 py-2 rounded-xl bg-velza-teal hover:bg-velza-deep text-white font-bold text-xs transition-colors active:scale-95 inline-flex items-center gap-1.5 shadow-2xs">
+                        <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.1" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                        </svg>
+                        <span>Order</span>
+                      </button>
                       ${qty === 0 ? `
-                        <button type="button" onclick="addToCart('${item.id}')" class="min-h-[44px] px-4 py-2 rounded-xl bg-velza-light hover:bg-velza-teal text-velza-darker hover:text-white font-bold text-xs sm:text-sm transition-colors active:scale-95 inline-flex items-center gap-1.5">
-                          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+                        <button type="button" onclick="addToCart('${item.id}')" class="min-h-[42px] px-3 sm:px-3.5 py-2 rounded-xl bg-velza-light hover:bg-velza-darker text-velza-darker hover:text-white font-bold text-xs transition-colors active:scale-95 inline-flex items-center gap-1">
+                          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
                           <span>Add</span>
                         </button>
                       ` : `
-                        <div class="flex items-center gap-1.5 bg-velza-light rounded-xl p-1 border border-velza-teal/20">
-                          <button type="button" onclick="updateQty('${item.id}', -1)" class="w-9 h-9 rounded-lg bg-white text-velza-charcoal flex items-center justify-center shadow-2xs hover:bg-velza-cream transition-colors" aria-label="Decrease quantity">
+                        <div class="flex items-center gap-1 bg-velza-light rounded-xl p-1 border border-velza-teal/20">
+                          <button type="button" onclick="updateQty('${item.id}', -1)" class="w-8 h-8 rounded-lg bg-white text-velza-charcoal flex items-center justify-center shadow-2xs hover:bg-velza-cream transition-colors" aria-label="Decrease quantity">
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><line x1="5" x2="19" y1="12" y2="12"/></svg>
                           </button>
-                          <span class="w-6 text-center text-xs sm:text-sm font-bold text-velza-darker">${qty}</span>
-                          <button type="button" onclick="updateQty('${item.id}', 1)" class="w-9 h-9 rounded-lg bg-velza-teal text-white flex items-center justify-center shadow-2xs hover:bg-velza-deep transition-colors" aria-label="Increase quantity">
+                          <span class="w-5 text-center text-xs font-bold text-velza-darker">${qty}</span>
+                          <button type="button" onclick="updateQty('${item.id}', 1)" class="w-8 h-8 rounded-lg bg-velza-teal text-white flex items-center justify-center shadow-2xs hover:bg-velza-deep transition-colors" aria-label="Increase quantity">
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
                           </button>
                         </div>
@@ -1781,6 +1786,21 @@
     }
 
     // 10. Bulletproof Order Tray Management
+    function orderSingleItemWhatsApp(id) {
+      const item = menuItems.find(i => i.id === id);
+      if (!item) return;
+
+      const qty = cartMap[id] && cartMap[id] > 0 ? cartMap[id] : 1;
+      const subtotal = (item.price * qty).toLocaleString();
+      const message =
+        `Assalam-o-Alaikum VELZA Artisanal Café! I would like to order:\n` +
+        `• ${qty}x ${item.name} (${item.subCategory}) — PKR ${subtotal}\n\n` +
+        `Please confirm availability. Thank you!`;
+
+      const waUrl = `https://wa.me/923127099198?text=${encodeURIComponent(message)}`;
+      window.open(waUrl, "_blank", "noopener,noreferrer");
+    }
+
     function addToCart(id) {
       const item = menuItems.find(i => i.id === id);
       if (!item) return;
